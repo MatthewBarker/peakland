@@ -62,6 +62,37 @@
             drawnItems.addLayer(event.layer);
             console.log(event.layer.toGeoJSON());
         });
+
+        // add regions
+        const blackHillResponse = await fetch('http://localhost:3000/regions/blackHill.json');
+        const blackHill = await blackHillResponse.json();
+
+        L.geoJSON(blackHill, { style: { color: "red" } }).addTo(map);
+
+        const bleaklowResponse = await fetch('http://localhost:3000/regions/bleaklow.json');
+        const bleaklow = await bleaklowResponse.json();
+
+        L.geoJSON(bleaklow, { style: { color: "green" } }).addTo(map);
+
+        const highPeakResponse = await fetch('http://localhost:3000/regions/highPeak.json');
+        const highPeak = await highPeakResponse.json();
+
+        L.geoJSON(highPeak, { style: { color: "blue" } }).addTo(map);
+
+        const southWestPeakResponse = await fetch('http://localhost:3000/regions/southWestPeak.json');
+        const southWestPeak = await southWestPeakResponse.json();
+
+        L.geoJSON(southWestPeak, { style: { color: "cyan" } }).addTo(map);
+
+        const whitePeakResponse = await fetch('http://localhost:3000/regions/whitePeak.json');
+        const whitePeak = await whitePeakResponse.json();
+
+        L.geoJSON(whitePeak, { style: { color: "magenta" } }).addTo(map);
+
+        const easternMoorResponse = await fetch('http://localhost:3000/regions/easternMoor.json');
+        const easternMoor = await easternMoorResponse.json();
+
+        L.geoJSON(easternMoor, { style: { color: "yellow" } }).addTo(map);
     </script>
 </body>
 
