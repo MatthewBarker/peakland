@@ -32,6 +32,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.0/proj4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js"></script>
     <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+    <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.js"></script>
     <script type="module">
         const keyResponse = await fetch('http://localhost:3000/key.txt');
         const key = await keyResponse.text();
@@ -52,8 +53,6 @@
         };
 
         const map = L.map("map", mapOptions);
-
-        L.tileLayer(api).addTo(map);
 
         // add drawing layer
         const drawnItems = L.featureGroup().addTo(map);
@@ -93,6 +92,40 @@
         const easternMoor = await easternMoorResponse.json();
 
         L.geoJSON(easternMoor, { style: { color: "yellow" } }).addTo(map);
+
+        // add points
+        const pointsResponse = await fetch('http://localhost:3000/points.yaml');
+        const pointsText = await pointsResponse.text();
+        const points = jsyaml.load(pointsText);
+        const blackHillMarkers = points.blackHill.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'red' }).bindTooltip(item.name));
+        const bleaklowMarkers = points.bleaklow.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'green' }).bindTooltip(item.name));
+        const highPeakMarkers = points.highPeak.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'blue' }).bindTooltip(item.name));
+        const whitePeakMarkers = points.whitePeak.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'magenta' }).bindTooltip(item.name));
+        const easternMoorsMarkers = points.easternMoors.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'yellow' }).bindTooltip(item.name));
+        const southWesternPeakMarkers = points.southWesternPeak.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'cyan' }).bindTooltip(item.name));
+        const villagesMarkers = points.villages.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'black' }).bindTooltip(item.name));
+
+        const overlay = {
+            "Black Hill": L.featureGroup(blackHillMarkers).addTo(map),
+            "Bleaklow": L.featureGroup(bleaklowMarkers).addTo(map),
+            "High Peak": L.featureGroup(highPeakMarkers).addTo(map),
+            "White Peak": L.featureGroup(whitePeakMarkers).addTo(map),
+            "Eastern Moors": L.featureGroup(easternMoorsMarkers).addTo(map),
+            "South Western Peak": L.featureGroup(southWesternPeakMarkers).addTo(map),
+            "Villages": L.featureGroup(villagesMarkers).addTo(map),
+            "Map": L.tileLayer(api).addTo(map),
+        };
+
+        L.control.layers(null, overlay).addTo(map);
+
+        const allPoints = points.blackHill.concat(points.bleaklow, points.highPeak,
+            points.whitePeak, points.easternMoors, points.southWesternPeak, points.villages);
+
+        points.routes.forEach((route) => {
+            const coords = route.points.map((point) => allPoints.find((item) => item.name == point).coords);
+
+            L.polyline(coords, { dashArray: '5' }).bindTooltip(route.name).addTo(map);
+        });
     </script>
 </body>
 
