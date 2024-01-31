@@ -8,6 +8,7 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/OrdnanceSurvey/os-api-branding@0.3.1/os-api-branding.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
     <style>
         body {
             margin: 0;
@@ -30,6 +31,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.0/proj4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js"></script>
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <script type="module">
         const keyResponse = await fetch('http://localhost:3000/key.txt');
         const key = await keyResponse.text();
@@ -46,11 +48,20 @@
             crs: crs,
             center: [53.34917, -1.809498],
             zoom: 3,
+            drawControl: true,
         };
 
         const map = L.map("map", mapOptions);
 
         L.tileLayer(api).addTo(map);
+
+        // add drawing layer
+        const drawnItems = L.featureGroup().addTo(map);
+
+        map.on(L.Draw.Event.CREATED, function (event) {
+            drawnItems.addLayer(event.layer);
+            console.log(event.layer.toGeoJSON());
+        });
     </script>
 </body>
 
