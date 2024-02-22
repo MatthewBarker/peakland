@@ -154,15 +154,16 @@ villages: # d6
     coords: [53.286003, -1.679844]
   - name: Hartington
     coords: [53.141337, -1.807697]
-  - name: Hathersage
-    coords: [53.333016, -1.649982]
   - name: Tideswell
     coords: [53.278697, -1.772465]
+  - name: Tissington
+    coords: [53.067484, -1.738139]
 routes:
   - name:
     points: [
       Buxton,
       Parkhouse Hill,
+      High Wheeldon,
     ]
   - name:
     points: [
@@ -221,23 +222,18 @@ routes:
     ]
   - name:
     points: [
-      Abney Moor,
-      Hathersage,
-    ]
-  - name:
-    points: [
       Monsall Head,
       Merlin Cavern,
     ]
   - name:
     points: [
-      Win Hill,
-      Hathersage,
+      Nabs Wood,
+      Hordron Stones,
     ]
   - name:
     points: [
       Nabs Wood,
-      Hordron Stones,
+      Alport Castles,
     ]
   - name:
     points: [
@@ -357,21 +353,14 @@ routes:
       Win Hill,
       Hordron Stones,
       High Neb,
-      Hathersage,
       Carl Wark Fort,
       Padley Gorge,
       Eyam,
     ]
   - name:
     points: [
-      Peak Cavern,
-      Hathersage,
-    ]
-  - name:
-    points: [
       Eyam,
       Wet Withens,
-      Hathersage,
     ]
   - name:
     points: [
@@ -468,6 +457,12 @@ routes:
       Hartington,
       Thor's Cave,
       Dove Holes,
+    ]
+  - name:
+    points: [
+      Dove Holes,
+      Tissington,
+      Minning Low Tomb,
     ]
   - name:
     points: [

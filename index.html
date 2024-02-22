@@ -104,7 +104,8 @@
 
         const areasGroup = L.layerGroup([
             darkPeakArea,
-            whitePeakArea, southWestPeakArea
+            whitePeakArea, 
+            southWestPeakArea
         ]);
 
         // load regions
@@ -171,7 +172,7 @@
         // add layer control
         const overlay = {
             "Map": L.tileLayer(api).addTo(map),
-            "Peak District": L.geoJSON(peakDistrict, { style: { color: "red" } }),
+            "Peak District": L.geoJSON(peakDistrict, { style: { color: "yellow" } }),
             "National Character Areas": areasGroup,
             "Regions": regionsGroup,
             "Points": pointsGroup,
