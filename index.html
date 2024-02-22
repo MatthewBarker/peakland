@@ -39,7 +39,7 @@
         const api = "https://api.os.uk/maps/raster/v1/zxy/Leisure_27700/{z}/{x}/{y}.png?key=" + key;
 
         // suppress leaflet warnings
-        console.warn = () => {};
+        console.warn = () => { };
 
         // setup the EPSG:27700 (British National Grid) projection
         const crs = new L.Proj.CRS("EPSG:27700", "+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.06,0.15,0.247,0.842,-20.489 +units=m +no_defs", {
@@ -50,9 +50,10 @@
         // centre on Mam Tor
         const mapOptions = {
             crs: crs,
+            minZoom: 0,
+            maxZoom: 9,
             center: [53.34917, -1.809498],
             zoom: 3,
-            // drawControl: true,
         };
 
         const map = L.map("map", mapOptions);
@@ -94,17 +95,17 @@
         const darkPeakFeature = areas.features.find((feature) => feature.properties.nca_name === "Dark Peak");
         const whitePeakFeature = areas.features.find((feature) => feature.properties.nca_name === "White Peak");
         const southWestPeakFeature = areas.features.find((feature) => feature.properties.nca_name === "South West Peak");
-        const darkPeakArea = L.geoJSON(darkPeakFeature, { 
+        const darkPeakArea = L.geoJSON(darkPeakFeature, {
             //onEachFeature: onEachFeature, // enable this to edit an existing layer
-            style: { color: "red" } 
+            style: { color: "red" }
         });
         const whitePeakArea = L.geoJSON(whitePeakFeature, { style: { color: "green" } });
         const southWestPeakArea = L.geoJSON(southWestPeakFeature, { style: { color: "blue" } });
 
         const areasGroup = L.layerGroup([
-            darkPeakArea, 
+            darkPeakArea,
             whitePeakArea, southWestPeakArea
-        ]);        
+        ]);
 
         // load regions
         const blackHillResponse = await fetch('http://localhost:3000/data/blackHill.geojson');
@@ -127,11 +128,11 @@
         const easternMoorRegion = L.geoJSON(easternMoor, { style: { color: "yellow" } });
 
         const regionsGroup = L.layerGroup([
-            blackhillRegion, 
-            bleaklowRegion, 
-            highPeakRegion, 
-            southWestRegion, 
-            whitePeakRegion, 
+            blackhillRegion,
+            bleaklowRegion,
+            highPeakRegion,
+            southWestRegion,
+            whitePeakRegion,
             easternMoorRegion
         ]);
 
@@ -145,7 +146,7 @@
         const whitePeakMarkers = points.whitePeak.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'magenta' }).bindTooltip(item.name));
         const easternMoorsMarkers = points.easternMoors.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'yellow' }).bindTooltip(item.name));
         const southWesternPeakMarkers = points.southWesternPeak.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'cyan' }).bindTooltip(item.name));
-        const villagesMarkers = points.villages.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'black' }).bindTooltip(item.name));           
+        const villagesMarkers = points.villages.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'black' }).bindTooltip(item.name));
 
         const allPoints = points.blackHill.concat(points.bleaklow, points.highPeak,
             points.whitePeak, points.easternMoors, points.southWesternPeak, points.villages);
@@ -155,17 +156,17 @@
 
             return L.polyline(coords, { dashArray: '5' }).bindTooltip(route.name);
         });
-        
+
         const pointsGroup = L.layerGroup([
-            L.featureGroup(blackHillMarkers), 
+            L.featureGroup(blackHillMarkers),
             L.featureGroup(bleaklowMarkers),
             L.featureGroup(highPeakMarkers),
-            L.featureGroup(whitePeakMarkers), 
-            L.featureGroup(easternMoorsMarkers), 
-            L.featureGroup(southWesternPeakMarkers), 
-            L.featureGroup(villagesMarkers), 
+            L.featureGroup(whitePeakMarkers),
+            L.featureGroup(easternMoorsMarkers),
+            L.featureGroup(southWesternPeakMarkers),
+            L.featureGroup(villagesMarkers),
             L.featureGroup(paths)
-        ]); 
+        ]);
 
         // add layer control
         const overlay = {
