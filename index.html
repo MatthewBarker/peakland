@@ -83,122 +83,25 @@
             drawnItems.addLayer(layer);
         }
 
-        // load peak district
-        // https://www.planning.data.gov.uk/entity/520006#geojson
-        const peakDistrictResponse = await fetch('http://localhost:3000/data/peak-district.geojson');
-        const peakDistrict = await peakDistrictResponse.json();
-
-        // load roman roads
-        // https://romanroadsinbritain.info/margary.html
-        const romanRoadsResponse = await fetch('http://localhost:3000/data/roman-roads.geojson');
-        const romanRoads = await romanRoadsResponse.json();
-
-        // load ancient woodland
-        // https://naturalengland-defra.opendata.arcgis.com/datasets/Defra::ancient-woodland-england/explore?location=53.304770%2C-1.665932%2C9.50
-        const ancientWoodlandResponse = await fetch('http://localhost:3000/data/ancient-woodland.geojson');
-        const ancientWoodland = await ancientWoodlandResponse.json();
-
-        ancientWoodland.features = ancientWoodland.features.filter((feature) =>
-            feature.properties.NAME.length > 1);
-
-        // load national character areas
-        // https://environment.data.gov.uk/explore/f955fff5-a132-4e25-8c7f-0d43664ff42e?download=true
-        const areasResponse = await fetch('http://localhost:3000/data/national-character-areas.geojson');
-        const areas = await areasResponse.json();
-        const darkPeakFeature = areas.features.find((feature) => feature.properties.nca_name === "Dark Peak");
-        const whitePeakFeature = areas.features.find((feature) => feature.properties.nca_name === "White Peak");
-        const southWestPeakFeature = areas.features.find((feature) => feature.properties.nca_name === "South West Peak");
-        const darkPeakArea = L.geoJSON(darkPeakFeature, {
-            //onEachFeature: onEachFeature, // enable this to edit an existing layer
-            style: { color: "red" }
-        });
-        const whitePeakArea = L.geoJSON(whitePeakFeature, { style: { color: "green" } });
-        const southWestPeakArea = L.geoJSON(southWestPeakFeature, { style: { color: "blue" } });
-
-        const areasGroup = L.layerGroup([
-            darkPeakArea,
-            whitePeakArea,
-            southWestPeakArea
-        ]);
-
-        // load regions
-        const blackHillResponse = await fetch('http://localhost:3000/data/blackHill.geojson');
-        const blackHill = await blackHillResponse.json();
-        const blackhillRegion = L.geoJSON(blackHill, { style: { color: "red" } });
-        const bleaklowResponse = await fetch('http://localhost:3000/data/bleaklow.geojson');
-        const bleaklow = await bleaklowResponse.json();
-        const bleaklowRegion = L.geoJSON(bleaklow, { style: { color: "green" } });
-        const highPeakResponse = await fetch('http://localhost:3000/data/highPeak.geojson');
-        const highPeak = await highPeakResponse.json();
-        const highPeakRegion = L.geoJSON(highPeak, { style: { color: "blue" } });
-        const southWestPeakResponse = await fetch('http://localhost:3000/data/southWestPeak.geojson');
-        const southWestPeak = await southWestPeakResponse.json();
-        const southWestRegion = L.geoJSON(southWestPeak, { style: { color: "cyan" } });
-        const whitePeakResponse = await fetch('http://localhost:3000/data/whitePeak.geojson');
-        const whitePeak = await whitePeakResponse.json();
-        const whitePeakRegion = L.geoJSON(whitePeak, { style: { color: "magenta" } });
-        const easternMoorResponse = await fetch('http://localhost:3000/data/easternMoor.geojson');
-        const easternMoor = await easternMoorResponse.json();
-        const easternMoorRegion = L.geoJSON(easternMoor, { style: { color: "yellow" } });
-
-        const regionsGroup = L.layerGroup([
-            blackhillRegion,
-            bleaklowRegion,
-            highPeakRegion,
-            southWestRegion,
-            whitePeakRegion,
-            easternMoorRegion
-        ]);
-
-        // load points
-        const pointsResponse = await fetch('http://localhost:3000/data/points.yaml');
-        const pointsText = await pointsResponse.text();
-        const points = jsyaml.load(pointsText);
-        const blackHillMarkers = points.blackHill.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'red' }).bindTooltip(item.name));
-        const bleaklowMarkers = points.bleaklow.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'green' }).bindTooltip(item.name));
-        const highPeakMarkers = points.highPeak.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'blue' }).bindTooltip(item.name));
-        const whitePeakMarkers = points.whitePeak.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'magenta' }).bindTooltip(item.name));
-        const easternMoorsMarkers = points.easternMoors.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'yellow' }).bindTooltip(item.name));
-        const southWesternPeakMarkers = points.southWesternPeak.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'cyan' }).bindTooltip(item.name));
-        const villagesMarkers = points.villages.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'black' }).bindTooltip(item.name));
-
-        const allPoints = points.blackHill.concat(points.bleaklow, points.highPeak,
-            points.whitePeak, points.easternMoors, points.southWesternPeak, points.villages);
-
-        const paths = points.routes.map((route) => {
-            const coords = route.points.map((point) => allPoints.find((item) => item.name == point).coords);
-
-            return L.polyline(coords, { dashArray: '5' }).bindTooltip(route.name);
-        });
-
-        const pointsGroup = L.layerGroup([
-            L.featureGroup(blackHillMarkers),
-            L.featureGroup(bleaklowMarkers),
-            L.featureGroup(highPeakMarkers),
-            L.featureGroup(whitePeakMarkers),
-            L.featureGroup(easternMoorsMarkers),
-            L.featureGroup(southWesternPeakMarkers),
-            L.featureGroup(villagesMarkers),
-            L.featureGroup(paths)
-        ]);
-
         // add layer control
         const overlay = {
             "Map": L.tileLayer(api).addTo(map),
-            "Peak District": L.geoJSON(peakDistrict, { style: { color: "yellow" } }),
-            "Roman Roads": L.geoJSON(romanRoads),
-            "Ancient Woodland": L.geoJSON(ancientWoodland, {
-                onEachFeature: function (feature, layer) {
-                    layer.bindTooltip(feature.properties.NAME);
-                    // or over a feature property layer.bindTooltip(feature.properties.customTitle)
-                }
-            }),
-            "National Character Areas": areasGroup,
-            "Regions": regionsGroup,
-            "Points": pointsGroup,
+            "Caves": await createFeatureGroup('caves.yaml', 'red'),
+            "Hills": await createFeatureGroup('hills.yaml', 'green'),
+            "Stones": await createFeatureGroup('stones.yaml', 'blue'),
+            "Woods": await createFeatureGroup('woods.yaml', 'black'),
         };
 
         L.control.layers(null, overlay).addTo(map);
+
+        async function createFeatureGroup(name, colour) {
+            const response = await fetch('http://localhost:3000/data/' + name);
+            const text = await response.text();
+            const data = jsyaml.load(text);
+            const markers = data.map((item) => L.circleMarker(item.coords, { radius: 10, color: colour }).bindTooltip(item.name));
+
+            return L.featureGroup(markers);
+        }
     </script>
 </body>
 
