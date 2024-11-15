@@ -6,8 +6,22 @@
 # 5) Eastern Moors
 # 6) South Western Peak
 
+# 3 danger levels:
+# 1) White Peak
+# 2) East and West borderlands
+# 2) Dark Peak
+
+# What about site types?
+# Find 6 each of these 6 types:
+# 1) hills
+# 2) caves
+# 3) barrows
+# 4) stones
+# 5) marshes
+# 6) woods
+
 ---
-blackHill: # 2d6
+blackHill: # 12 items
   - name: Alderman's Hill
     coords: [53.538141, -1.978411]
   - name: Alphin
@@ -30,6 +44,8 @@ blackHill: # 2d6
     coords: [53.526308, -1.802397]
   - name: White Moss
     coords: [53.560807, -1.934148]
+  - name: West Nab # new
+    coords: [53.575679, -1.886073]
 bleaklow: # 2d6
   - name: Alport Castles
     coords: [53.42039, -1.787378]
@@ -464,10 +480,11 @@ routes:
       Tissington,
       Minning Low Tomb,
     ]
-  - name:
+  - name: The Street
     points: [
       Buxton,
       Arbor Low,
+      Minning Low Tomb,
     ]
   - name:
     points: [

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OS Maps API | Basic Map ZXY (EPSG:27700) | Leaflet</title>
+    <title>Peakland</title>
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/OrdnanceSurvey/os-api-branding@0.3.1/os-api-branding.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -88,6 +88,19 @@
         const peakDistrictResponse = await fetch('http://localhost:3000/data/peak-district.geojson');
         const peakDistrict = await peakDistrictResponse.json();
 
+        // load roman roads
+        // https://romanroadsinbritain.info/margary.html
+        const romanRoadsResponse = await fetch('http://localhost:3000/data/roman-roads.geojson');
+        const romanRoads = await romanRoadsResponse.json();
+
+        // load ancient woodland
+        // https://naturalengland-defra.opendata.arcgis.com/datasets/Defra::ancient-woodland-england/explore?location=53.304770%2C-1.665932%2C9.50
+        const ancientWoodlandResponse = await fetch('http://localhost:3000/data/ancient-woodland.geojson');
+        const ancientWoodland = await ancientWoodlandResponse.json();
+
+        ancientWoodland.features = ancientWoodland.features.filter((feature) =>
+            feature.properties.NAME.length > 1);
+
         // load national character areas
         // https://environment.data.gov.uk/explore/f955fff5-a132-4e25-8c7f-0d43664ff42e?download=true
         const areasResponse = await fetch('http://localhost:3000/data/national-character-areas.geojson');
@@ -104,7 +117,7 @@
 
         const areasGroup = L.layerGroup([
             darkPeakArea,
-            whitePeakArea, 
+            whitePeakArea,
             southWestPeakArea
         ]);
 
@@ -173,6 +186,13 @@
         const overlay = {
             "Map": L.tileLayer(api).addTo(map),
             "Peak District": L.geoJSON(peakDistrict, { style: { color: "yellow" } }),
+            "Roman Roads": L.geoJSON(romanRoads),
+            "Ancient Woodland": L.geoJSON(ancientWoodland, {
+                onEachFeature: function (feature, layer) {
+                    layer.bindTooltip(feature.properties.NAME);
+                    // or over a feature property layer.bindTooltip(feature.properties.customTitle)
+                }
+            }),
             "National Character Areas": areasGroup,
             "Regions": regionsGroup,
             "Points": pointsGroup,
