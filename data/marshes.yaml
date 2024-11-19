@@ -1,0 +1,14 @@
+---
+- name: Black Moss
+  coords: [53.573784, -1.93492]
+- name: Bleakmires Moss
+  coords: [53.519807, -1.841226]
+- name: Cressbrook Dale
+  coords: [53.264199, -1.74405]
+- name: Crowden Head
+  coords: [53.391709, -1.858386]
+- name: Doxey Pool
+  coords: [53.16482, -1.998935]
+- name: Three Shires Head
+  coords: [53.213852, -1.987503]
+...

@@ -1,12 +1,12 @@
 ---
 - name: Black Clough
   coords: [53.487713, -1.826339]
-- name: Rookery Wood
+- name: Rookery Wood # change to luds church
   coords: [53.186973, -2.079938]
 - name: Padley Woods
   coords: [53.310813, -1.621714]
-- name: Manners Wood
-  coords: [53.208891, -1.645781]
+- name: Monsal Dale
+  coords: [53.239259, -1.740763]
 - name: Dove Dale Woods
   coords: [53.071614, -1.787008]
 - name: Nabs Wood

@@ -33,6 +33,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js"></script>
     <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.js"></script>
+    
     <script type="module">
         const keyResponse = await fetch('http://localhost:3000/key.txt');
         const key = await keyResponse.text();
@@ -83,13 +84,56 @@
             drawnItems.addLayer(layer);
         }
 
+        // add national character areas
+        // https://environment.data.gov.uk/explore/f955fff5-a132-4e25-8c7f-0d43664ff42e?download=true
+        const areasResponse = await fetch('http://localhost:3000/gis/national-character-areas.geojson');
+        const areas = await areasResponse.json();
+
+        areas.features = areas.features.filter((feature) => 
+            feature.properties.nca_name === "Dark Peak" ||
+            feature.properties.nca_name === "White Peak" ||
+            feature.properties.nca_name === "South West Peak"
+        );
+
+        // load peak district
+        // https://www.planning.data.gov.uk/entity/520006#geojson
+        const peakDistrictResponse = await fetch('http://localhost:3000/gis/peak-district.geojson');
+        const peakDistrict = await peakDistrictResponse.json();
+
+        // load roman roads
+        // https://romanroadsinbritain.info/margary.html
+        const romanRoadsResponse = await fetch('http://localhost:3000/gis/roman-roads.geojson');
+        const romanRoads = await romanRoadsResponse.json();
+
+        // load ancient woodland
+        // https://naturalengland-defra.opendata.arcgis.com/datasets/Defra::ancient-woodland-england/explore?location=53.304770%2C-1.665932%2C9.50
+        const ancientWoodlandResponse = await fetch('http://localhost:3000/gis/ancient-woodland.geojson');
+        const ancientWoodland = await ancientWoodlandResponse.json();
+
+        ancientWoodland.features = ancientWoodland.features.filter((feature) =>
+            feature.properties.NAME.length > 1);
+
         // add layer control
         const overlay = {
             "Map": L.tileLayer(api).addTo(map),
+
+            "Peak District": L.geoJSON(peakDistrict, { style: { color: "yellow" } }),
+            "Areas": L.geoJSON(areas, { style: { color: "black" } }),
+            "Roman Roads": L.geoJSON(romanRoads),
+            "Ancient Woodland": L.geoJSON(ancientWoodland, { style: { color: "green" },
+                onEachFeature: function (feature, layer) {
+                    layer.bindTooltip(feature.properties.NAME);
+                }
+            }),
+
             "Caves": await createFeatureGroup('caves.yaml', 'red'),
             "Hills": await createFeatureGroup('hills.yaml', 'green'),
+            "Marshes": await createFeatureGroup('marshes.yaml', 'cyan'),
+            "Woods": await createFeatureGroup('woods.yaml', 'purple'),
+
+            "Barrows": await createFeatureGroup('barrows.yaml', 'brown'),
             "Stones": await createFeatureGroup('stones.yaml', 'blue'),
-            "Woods": await createFeatureGroup('woods.yaml', 'black'),
+            "Villages": await createFeatureGroup('villages.yaml', 'magenta'),
         };
 
         L.control.layers(null, overlay).addTo(map);

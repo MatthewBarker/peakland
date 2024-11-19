@@ -20,6 +20,8 @@
 # 5) marshes
 # 6) woods
 
+# 12 exploration sites per danger level
+
 ---
 blackHill: # 12 items
   - name: Alderman's Hill
