@@ -1,7 +1,7 @@
 ---
 - name: Black Clough
   coords: [53.487713, -1.826339]
-- name: Rookery Wood # change to luds church
+- name: Rookery Wood
   coords: [53.186973, -2.079938]
 - name: Padley Woods
   coords: [53.310813, -1.621714]

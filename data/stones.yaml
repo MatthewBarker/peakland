@@ -7,10 +7,8 @@
   coords: [53.378035, -1.677681]
 - name: Nine Ladies
   coords: [53.168018, -1.628812]
-- name: Nine Stones Close # too close to nine ladies?
+- name: Nine Stones Close
   coords: [53.160796, -1.665543]
 - name: Wet Withens
   coords: [53.307366, -1.66306]
 ...
-
-# bull ring?
