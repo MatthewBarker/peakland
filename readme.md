@@ -34,3 +34,10 @@ https://heritagerecords.nationaltrust.org.uk/map
 
 # The National Heritage List for England
 https://historicengland.org.uk/
+
+# Rivers
+https://environment.data.gov.uk/catchment-planning/
+https://environment.data.gov.uk/catchment-planning/OperationalCatchment/3137
+
+# new sites
+Windgather Rocks

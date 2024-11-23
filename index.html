@@ -86,10 +86,10 @@
 
         // add national character areas
         // https://environment.data.gov.uk/explore/f955fff5-a132-4e25-8c7f-0d43664ff42e?download=true
-        const areasResponse = await fetch('http://localhost:3000/gis/national-character-areas.geojson');
-        const areas = await areasResponse.json();
+        const ncaResponse = await fetch('http://localhost:3000/gis/national-character-areas.geojson');
+        const nca = await ncaResponse.json();
 
-        areas.features = areas.features.filter((feature) => 
+        nca.features = nca.features.filter((feature) => 
             feature.properties.nca_name === "Dark Peak" ||
             feature.properties.nca_name === "White Peak" ||
             feature.properties.nca_name === "South West Peak"
@@ -113,13 +113,26 @@
         ancientWoodland.features = ancientWoodland.features.filter((feature) =>
             feature.properties.NAME.length > 1);
 
+        // load rivers
+        const derwentResponse = await fetch('http://localhost:3000/gis/derwent.geojson');
+        const derwent = await derwentResponse.json();
+        
+        const doveResponse = await fetch('http://localhost:3000/gis/dove.geojson');
+        const dove = await doveResponse.json();
+        
+        const goytResponse = await fetch('http://localhost:3000/gis/goyt.geojson');
+        const goyt = await goytResponse.json();
+
         // add layer control
         const overlay = {
             "Map": L.tileLayer(api).addTo(map),
 
             "Peak District": L.geoJSON(peakDistrict, { style: { color: "yellow" } }),
-            "Areas": L.geoJSON(areas, { style: { color: "black" } }),
+            "National Character Areas": L.geoJSON(nca, { style: { color: "black" } }),
             "Roman Roads": L.geoJSON(romanRoads),
+            "Derwent": L.geoJSON(derwent),
+            "Dove": L.geoJSON(dove),
+            "Goyt": L.geoJSON(goyt),
             "Ancient Woodland": L.geoJSON(ancientWoodland, { style: { color: "green" },
                 onEachFeature: function (feature, layer) {
                     layer.bindTooltip(feature.properties.NAME);
@@ -134,6 +147,8 @@
             "Barrows": await createFeatureGroup('barrows.yaml', 'brown'),
             "Stones": await createFeatureGroup('stones.yaml', 'blue'),
             "Villages": await createFeatureGroup('villages.yaml', 'magenta'),
+
+            "Areas": await createFeatureGroup('areas.yaml', 'orange'),
         };
 
         L.control.layers(null, overlay).addTo(map);
@@ -142,7 +157,10 @@
             const response = await fetch('http://localhost:3000/data/' + name);
             const text = await response.text();
             const data = jsyaml.load(text);
-            const markers = data.map((item) => L.circleMarker(item.coords, { radius: 10, color: colour }).bindTooltip(item.name));
+            const markers = data.map((item) => L.circleMarker(item.coords, { radius: 10, color: colour }).bindTooltip(item.name, {
+                permanent: true,
+                direction: 'bottom',
+            }));
 
             return L.featureGroup(markers);
         }

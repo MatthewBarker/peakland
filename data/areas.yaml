@@ -1,0 +1,26 @@
+---
+- name: Saddleworth Moor
+  coords: [53.549063, -1.946081]
+- name: Bleaklow
+  coords: [53.465547, -1.84681]
+- name: Howden Moors
+  coords: [53.470657, -1.759608]
+- name: Kinder Scout
+  coords: [53.389841, -1.861839]
+- name: Eyam Moor
+  coords: [53.303233, -1.66446]
+- name: Gibbet Moor
+  coords: [53.232196, -1.575982]
+- name: Stanton Moor
+  coords: [53.165994, -1.630611]
+- name: Axe Edge Moor
+  coords: [53.234579, -1.963199]
+- name: Southern Dales
+  coords: [53.100866, -1.702793]
+- name: The Roaches
+  coords: [53.165339, -1.99742]
+- name: Peak Forest
+  coords: [53.313117, -1.83125]
+- name: Hallam Moors
+  coords: [53.367568, -1.621717]
+...
