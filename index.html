@@ -105,14 +105,6 @@
         const romanRoadsResponse = await fetch('http://localhost:3000/gis/roman-roads.geojson');
         const romanRoads = await romanRoadsResponse.json();
 
-        // load ancient woodland
-        // https://naturalengland-defra.opendata.arcgis.com/datasets/Defra::ancient-woodland-england/explore?location=53.304770%2C-1.665932%2C9.50
-        const ancientWoodlandResponse = await fetch('http://localhost:3000/gis/ancient-woodland.geojson');
-        const ancientWoodland = await ancientWoodlandResponse.json();
-
-        ancientWoodland.features = ancientWoodland.features.filter((feature) =>
-            feature.properties.NAME.length > 1);
-
         // load rivers
         const derwentResponse = await fetch('http://localhost:3000/gis/derwent.geojson');
         const derwent = await derwentResponse.json();
@@ -133,11 +125,6 @@
             "Derwent": L.geoJSON(derwent),
             "Dove": L.geoJSON(dove),
             "Goyt": L.geoJSON(goyt),
-            "Ancient Woodland": L.geoJSON(ancientWoodland, { style: { color: "green" },
-                onEachFeature: function (feature, layer) {
-                    layer.bindTooltip(feature.properties.NAME);
-                }
-            }),
 
             "Caves": await createFeatureGroup('caves.yaml', 'red'),
             "Hills": await createFeatureGroup('hills.yaml', 'green'),
@@ -158,8 +145,8 @@
             const text = await response.text();
             const data = jsyaml.load(text);
             const markers = data.map((item) => L.circleMarker(item.coords, { radius: 10, color: colour }).bindTooltip(item.name, {
-                permanent: true,
-                direction: 'bottom',
+                //permanent: true,
+                //direction: 'bottom',
             }));
 
             return L.featureGroup(markers);

@@ -2,13 +2,13 @@
 - name: Shining Tor
   coords: [53.260634, -2.009401]
 - name: Bleaklow Head
-  coords: [53.4611, -1.863532]
+  coords: [53.46017, -1.862507]
 - name: Parkhouse Hill
   coords: [53.199306, -1.881548]
-- name: Grindslow Knoll
-  coords: [53.378357, -1.83628]
+- name: Margery Hill
+  coords: [53.457555, -1.716771]
 - name: Black Hill
   coords: [53.5387, -1.883615]
-- name: Mam Tor
-  coords: [53.362989, -1.875696]
+- name: Back Tor
+  coords: [53.415305, -1.704045]
 ...
