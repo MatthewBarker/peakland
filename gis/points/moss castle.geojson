@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Moss Castle"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.894974,
+            53.421759
+        ]
+    }
+}

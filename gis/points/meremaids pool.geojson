@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Meremaid's Pool"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.889434,
+            53.394888
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Hurkling Stones"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.69778,
+            53.38622
+        ]
+    }
+}

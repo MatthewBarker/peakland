@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "High Neb"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.658595,
+            53.364533
+        ]
+    }
+}

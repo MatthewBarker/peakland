@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Eyam Moor"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.664484,
+            53.303233
+        ]
+    }
+}

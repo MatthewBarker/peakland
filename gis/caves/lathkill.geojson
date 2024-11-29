@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Lathkill Cavern"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.745827,
+            53.189876
+        ]
+    }
+}

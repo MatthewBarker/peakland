@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Tissington"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.738138,
+            53.067505
+        ]
+    }
+}

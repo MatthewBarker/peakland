@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Merlin Cave"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.676033,
+            53.279622
+        ]
+    }
+}

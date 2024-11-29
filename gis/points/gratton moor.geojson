@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Gratton Moor"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.707431,
+            53.141259
+        ]
+    }
+}

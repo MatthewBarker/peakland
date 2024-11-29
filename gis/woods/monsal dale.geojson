@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Monsal Dale"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.746765,
+            53.239728
+        ]
+    }
+}

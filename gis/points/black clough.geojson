@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Black Clough"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.827943,
+            53.48954
+        ]
+    }
+}

@@ -20,6 +20,8 @@
             bottom: 0;
             top: 0;
             width: 100%;
+            /* width: calc(594px * 4); */
+            /* height: calc(841px * 4); */
         }
     </style>
 </head>
@@ -35,7 +37,7 @@
     <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.js"></script>
     
     <script type="module">
-        const keyResponse = await fetch('http://localhost:3000/key.txt');
+        const keyResponse = await fetch("http://localhost:3000/key.txt");
         const key = await keyResponse.text();
         const api = "https://api.os.uk/maps/raster/v1/zxy/Leisure_27700/{z}/{x}/{y}.png?key=" + key;
 
@@ -48,13 +50,10 @@
             origin: [-238375.0, 1376256.0]
         });
 
-        // centre on Mam Tor
         const mapOptions = {
             crs: crs,
             minZoom: 0,
             maxZoom: 9,
-            center: [53.34917, -1.809498],
-            zoom: 3,
         };
 
         const map = L.map("map", mapOptions);
@@ -86,7 +85,7 @@
 
         // add national character areas
         // https://environment.data.gov.uk/explore/f955fff5-a132-4e25-8c7f-0d43664ff42e?download=true
-        const ncaResponse = await fetch('http://localhost:3000/gis/national-character-areas.geojson');
+        const ncaResponse = await fetch("http://localhost:3000/gis/national-character-areas.geojson");
         const nca = await ncaResponse.json();
 
         nca.features = nca.features.filter((feature) => 
@@ -95,61 +94,90 @@
             feature.properties.nca_name === "South West Peak"
         );
 
-        // load peak district
-        // https://www.planning.data.gov.uk/entity/520006#geojson
-        const peakDistrictResponse = await fetch('http://localhost:3000/gis/peak-district.geojson');
-        const peakDistrict = await peakDistrictResponse.json();
+        const peakDistrict = await (await fetch("http://localhost:3000/gis/peak-district.geojson")).json();
+        const peakDistrictLayer = L.geoJSON(peakDistrict, { style: { color: "yellow" } });
+        const bounds = peakDistrictLayer.getBounds();
+        const centre = bounds.getCenter();
 
-        // load roman roads
-        // https://romanroadsinbritain.info/margary.html
-        const romanRoadsResponse = await fetch('http://localhost:3000/gis/roman-roads.geojson');
-        const romanRoads = await romanRoadsResponse.json();
+        // lat = y, lng = x
+        const nw = L.rectangle([
+            [centre.lat, bounds.getWest()], // sw
+            [bounds.getNorth(), centre.lng] // ne
+        ]);
 
-        // load rivers
-        const derwentResponse = await fetch('http://localhost:3000/gis/derwent.geojson');
-        const derwent = await derwentResponse.json();
+        const ne = L.rectangle([
+            centre, // sw
+            bounds.getNorthEast() // ne
+        ]);
+
+        const se = L.rectangle([
+            [bounds.getSouth(), centre.lng], // sw
+            [centre.lat, bounds.getEast()] //ne
+        ]);
+
+        const sw = L.rectangle([
+            bounds.getSouthWest(), // sw
+            centre //ne
+        ]);
+
+        const quarters = L.layerGroup([nw, ne, se, sw]);
+
+        map.fitBounds(bounds);
+
+        // const ancientWoodland = await (await fetch("http://localhost:3000/gis/ancient-woodland.geojson")).json();
+
+        // ancientWoodland.features = ancientWoodland.features.filter((feature) =>
+        //     feature.properties.NAME.length > 1);
+
+        const romanRoads = await (await fetch("http://localhost:3000/gis/roman-roads.geojson")).json();
+        const rivers = await (await fetch("http://localhost:3000/gis/rivers.geojson")).json();
+        const paths = await (await fetch("http://localhost:3000/gis/paths.geojson")).json();
         
-        const doveResponse = await fetch('http://localhost:3000/gis/dove.geojson');
-        const dove = await doveResponse.json();
-        
-        const goytResponse = await fetch('http://localhost:3000/gis/goyt.geojson');
-        const goyt = await goytResponse.json();
+        const areas = await (await fetch("http://localhost:3000/gis/areas.geojson")).json();
+        const barrows = await (await fetch("http://localhost:3000/gis/barrows.geojson")).json();
+        const caves = await (await fetch("http://localhost:3000/gis/caves.geojson")).json();
+        const hills = await (await fetch("http://localhost:3000/gis/hills.geojson")).json();
+        const marshes = await (await fetch("http://localhost:3000/gis/marshes.geojson")).json();
+        const points = await (await fetch("http://localhost:3000/gis/points.geojson")).json();
+        const stones = await (await fetch("http://localhost:3000/gis/stones.geojson")).json();
+        const villages = await (await fetch("http://localhost:3000/gis/villages.geojson")).json();
+        const woods = await (await fetch("http://localhost:3000/gis/woods.geojson")).json();
 
         // add layer control
         const overlay = {
             "Map": L.tileLayer(api).addTo(map),
-
-            "Peak District": L.geoJSON(peakDistrict, { style: { color: "yellow" } }),
+            "Peak District": peakDistrictLayer,
+            "Quarters": quarters,
             "National Character Areas": L.geoJSON(nca, { style: { color: "black" } }),
             "Roman Roads": L.geoJSON(romanRoads),
-            "Derwent": L.geoJSON(derwent),
-            "Dove": L.geoJSON(dove),
-            "Goyt": L.geoJSON(goyt),
+            "Rivers": L.geoJSON(rivers),
+            // "Ancient Woodland": L.geoJSON(ancientWoodland, { style: { color: "green" } }),
+            "Areas": geojsonToMarkerLayer(areas, "orange"),
+            "Barrows": geojsonToMarkerLayer(barrows, "brown"),
+            "Caves": geojsonToMarkerLayer(caves, "red"),
+            "Hills": geojsonToMarkerLayer(hills, "green"),
+            "Marshes": geojsonToMarkerLayer(marshes, "blue"),
+            "Points": geojsonToMarkerLayer(points, "black"),
+            "Stones": geojsonToMarkerLayer(stones, "magenta"),
+            "Villages": geojsonToMarkerLayer(villages, "cyan"),
+            "Woods": geojsonToMarkerLayer(woods, "yellow"),
 
-            "Caves": await createFeatureGroup('caves.yaml', 'red'),
-            "Hills": await createFeatureGroup('hills.yaml', 'green'),
-            "Marshes": await createFeatureGroup('marshes.yaml', 'cyan'),
-            "Woods": await createFeatureGroup('woods.yaml', 'purple'),
-
-            "Barrows": await createFeatureGroup('barrows.yaml', 'brown'),
-            "Stones": await createFeatureGroup('stones.yaml', 'blue'),
-            "Villages": await createFeatureGroup('villages.yaml', 'magenta'),
-
-            "Areas": await createFeatureGroup('areas.yaml', 'orange'),
+            "Paths": L.geoJSON(paths, { style: { color: "black" } }),
         };
 
         L.control.layers(null, overlay).addTo(map);
 
-        async function createFeatureGroup(name, colour) {
-            const response = await fetch('http://localhost:3000/data/' + name);
-            const text = await response.text();
-            const data = jsyaml.load(text);
-            const markers = data.map((item) => L.circleMarker(item.coords, { radius: 10, color: colour }).bindTooltip(item.name, {
-                //permanent: true,
-                //direction: 'bottom',
-            }));
-
-            return L.featureGroup(markers);
+        function geojsonToMarkerLayer (geojson, colour) {
+            return L.geoJSON(geojson, {
+                onEachFeature: function(feature, layer) {
+                    layer.bindPopup(feature.properties.name);
+                    layer.on('mouseover', function() { layer.openPopup(); });
+                    layer.on('mouseout', function() { layer.closePopup(); });
+                },
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, { radius: 10, color: colour });
+                }
+            });
         }
     </script>
 </body>

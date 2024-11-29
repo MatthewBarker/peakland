@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Bleaklow Stones"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.830942,
+            53.463638
+        ]
+    }
+}

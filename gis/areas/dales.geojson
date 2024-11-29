@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "The Dales"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.702755,
+            53.100913
+        ]
+    }
+}

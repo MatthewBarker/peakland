@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Peak Tor"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.624354,
+            53.184332
+        ]
+    }
+}

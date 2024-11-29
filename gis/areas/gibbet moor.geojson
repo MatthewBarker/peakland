@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Gibbet Moor"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.576008,
+            53.23218
+        ]
+    }
+}

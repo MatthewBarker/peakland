@@ -1,0 +1,161 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Axe Edge Moor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.963225,
+          53.234611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bleaklow"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.846752,
+          53.465578
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Dales"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.702755,
+          53.100913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Eyam Moor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.664484,
+          53.303233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gibbet Moor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.576008,
+          53.23218
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hallam Moors"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.62169,
+          53.367552
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Howden Moors"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.75963,
+          53.470641
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kinder Scout"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.861865,
+          53.389825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Peak Forest"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.831223,
+          53.313133
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Roaches"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.997469,
+          53.165355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Saddleworth Moor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.946025,
+          53.549047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Stanton Moor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.63061,
+          53.165931
+        ]
+      }
+    }
+  ]
+}

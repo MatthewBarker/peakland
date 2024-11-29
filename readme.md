@@ -17,7 +17,6 @@ Ref
 https://reports.peakdistrict.gov.uk/ccva/docs/assessments/culturallandscapes/monuments.html
 
 # Domesday Book
-
 Largest settlements in the Blackwell hundred in 1086
 https://opendomesday.org/hundred/blackwell/
 
@@ -37,8 +36,19 @@ https://historicengland.org.uk/
 
 # Rivers
 https://environment.data.gov.uk/catchment-planning/
-https://environment.data.gov.uk/catchment-planning/OperationalCatchment/3137
-https://environment.data.gov.uk/catchment-planning/OperationalCatchment/3206
+
+# Roman Roads
+https://romanroadsinbritain.info/margary.html
+
+# Ancient Woodland
+https://naturalengland-defra.opendata.arcgis.com/datasets/Defra::ancient-woodland-england/explore?location=53.304770%2C-1.665932%2C9.50
+
+# Peak District
+https://www.planning.data.gov.uk/entity/520006#geojson
+
+https://www.peakdistrict.gov.uk/__data/assets/pdf_file/0026/527075/Landscape-Strategy-01-Introduction.pdf
+
+https://pdnpa.maps.arcgis.com/apps/webappviewer/index.html?id=283ae2e036094016a676d02e4c3c067e
 
 # new sites
 Windgather Rocks

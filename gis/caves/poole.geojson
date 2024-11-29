@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Poole's Cavern"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.930165,
+            53.250059
+        ]
+    }
+}

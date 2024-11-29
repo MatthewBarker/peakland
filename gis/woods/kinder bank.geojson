@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Kinder Bank"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.927661,
+            53.382223
+        ]
+    }
+}

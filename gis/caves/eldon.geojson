@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Eldon Hole"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.827183,
+            53.324909
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "White Path Moss"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.630255,
+            53.350291
+        ]
+    }
+}

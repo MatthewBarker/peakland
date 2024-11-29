@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Howden Moors"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.75963,
+            53.470641
+        ]
+    }
+}

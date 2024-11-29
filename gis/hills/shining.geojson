@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Shining Tor"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -2.009584,
+            53.260728
+        ]
+    }
+}

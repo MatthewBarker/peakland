@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Axe Edge Moor"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.963225,
+            53.234611
+        ]
+    }
+}

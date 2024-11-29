@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Mam Tor"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.813627,
+            53.347572
+        ]
+    }
+}

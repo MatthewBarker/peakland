@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Dovedale Wood"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.78706,
+            53.071599
+        ]
+    }
+}

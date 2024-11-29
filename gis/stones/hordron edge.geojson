@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Hordron Edge"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.677865,
+            53.378083
+        ]
+    }
+}

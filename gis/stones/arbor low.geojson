@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Arbor Low"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.76171,
+            53.168908
+        ]
+    }
+}

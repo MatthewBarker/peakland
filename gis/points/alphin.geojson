@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Alphin"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.997001,
+            53.522035
+        ]
+    }
+}

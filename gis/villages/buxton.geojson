@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Buxton"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.909718,
+            53.257848
+        ]
+    }
+}

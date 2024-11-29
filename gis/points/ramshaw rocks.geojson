@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Ramshaw Rocks"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.972532,
+            53.159012
+        ]
+    }
+}

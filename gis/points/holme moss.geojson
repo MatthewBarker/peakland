@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Holme Moss"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.865342,
+            53.535157
+        ]
+    }
+}

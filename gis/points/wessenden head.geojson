@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Wessenden Head"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.887384,
+            53.56137
+        ]
+    }
+}

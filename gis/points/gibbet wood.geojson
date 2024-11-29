@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Gibbet Wood"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.589169,
+            53.238046
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Eagle Stone"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.606655,
+            53.260836
+        ]
+    }
+}

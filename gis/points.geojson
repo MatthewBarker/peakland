@@ -1,0 +1,525 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Alderman's Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.978231,
+          53.538251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Alphin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.997001,
+          53.522035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Black Clough"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.827943,
+          53.48954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bleaklow Stones"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.830942,
+          53.463638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Burbage Rocks"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.599258,
+          53.337198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chrome Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.895824,
+          53.202969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dead Edge End"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.81382,
+          53.512107
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Eagle Stone"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.606655,
+          53.260836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Giant's Hole"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.820266,
+          53.340677
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gibbet Wood"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.589169,
+          53.238046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Goyt's Moss"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.974881,
+          53.254701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gratton Moor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.707431,
+          53.141259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "High Neb"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.658595,
+          53.364533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "High Rake"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.681748,
+          53.259031
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "High Wheeldon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.851322,
+          53.192052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Holme Moss"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.865342,
+          53.535157
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hurkling Stone"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.599596,
+          53.295482
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hurkling Stones"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.69778,
+          53.38622
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Laddow Rocks"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.915663,
+          53.510413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lose Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.771599,
+          53.364991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mam Tor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.813627,
+          53.347572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Meremaid's Pool"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.889434,
+          53.394888
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Moss Castle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.894974,
+          53.421759
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Navio"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.728648,
+          53.339245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Peak Tor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.624354,
+          53.184332
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ramshaw Rocks"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.972532,
+          53.159012
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Raven Stones"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.949237,
+          53.5395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ravenstor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.77287,
+          53.256643
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Revidge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.885831,
+          53.136277
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Round Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.69386,
+          53.441595
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shepherds Meeting Stones"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.78664,
+          53.479265
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Swamp"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.843931,
+          53.450662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Thorpe Cloud"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.775566,
+          53.056429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Torside"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.917449,
+          53.481503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Wessenden Head"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.887384,
+          53.56137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "White Moss"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.937747,
+          53.559959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Wildboarclough"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.036946,
+          53.223316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Win Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.720801,
+          53.362382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Withered Low"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.848737,
+          53.28533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Wormhill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.814321,
+          53.269268
+        ]
+      }
+    }
+  ]
+}

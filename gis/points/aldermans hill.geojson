@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Alderman's Hill"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.978231,
+            53.538251
+        ]
+    }
+}

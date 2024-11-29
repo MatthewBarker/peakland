@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Featherbed Moss"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.936926,
+            53.504244
+        ]
+    }
+}

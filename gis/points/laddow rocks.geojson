@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Laddow Rocks"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.915663,
+            53.510413
+        ]
+    }
+}

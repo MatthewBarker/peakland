@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Wildboarclough"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -2.036946,
+            53.223316
+        ]
+    }
+}

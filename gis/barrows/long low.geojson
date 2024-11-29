@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Long Low"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.819429,
+            53.08227
+        ]
+    }
+}
