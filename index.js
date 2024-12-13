@@ -6,6 +6,7 @@ merge("barrows");
 merge("caves");
 merge("hills");
 merge("marshes");
+merge("paths");
 merge("points");
 merge("stones");
 merge("villages");

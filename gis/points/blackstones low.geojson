@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Blackstone's Low"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.687772,
+            53.095542
+        ]
+    }
+}

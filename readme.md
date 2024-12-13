@@ -50,5 +50,10 @@ https://www.peakdistrict.gov.uk/__data/assets/pdf_file/0026/527075/Landscape-Str
 
 https://pdnpa.maps.arcgis.com/apps/webappviewer/index.html?id=283ae2e036094016a676d02e4c3c067e
 
+# Portway
+https://www.walkingenglishman.com/ldp/derbyshireportway.html
+https://hiiker.app/trails/england/nottinghamshire/derbyshire-portway/map
+https://her.derbyshire.gov.uk/Monument/MDR11186
+
 # new sites
 Windgather Rocks

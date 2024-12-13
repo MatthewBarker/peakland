@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
     <style>
-        body {
+        html, body {
             margin: 0;
             padding: 0;
         }
@@ -34,7 +34,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.0/proj4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js"></script>
     <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
-    <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.js"></script>
+    <!-- <script src="https://unpkg.com/leaflet-rotate@0.2.8/dist/leaflet-rotate-src.js"></script> -->
     
     <script type="module">
         const keyResponse = await fetch("http://localhost:3000/key.txt");
@@ -95,32 +95,34 @@
         );
 
         const peakDistrict = await (await fetch("http://localhost:3000/gis/peak-district.geojson")).json();
-        const peakDistrictLayer = L.geoJSON(peakDistrict, { style: { color: "yellow" } });
+        const peakDistrictLayer = L.geoJSON(peakDistrict, { style: { color: "gray", fill: false, dashArray: "20" } });
         const bounds = peakDistrictLayer.getBounds();
         const centre = bounds.getCenter();
 
         // lat = y, lng = x
-        const nw = L.rectangle([
-            [centre.lat, bounds.getWest()], // sw
-            [bounds.getNorth(), centre.lng] // ne
-        ]);
+        const box = L.rectangle(bounds, { color: "red", fill: false });
 
-        const ne = L.rectangle([
-            centre, // sw
-            bounds.getNorthEast() // ne
-        ]);
+        const vertical = L.polyline([
+            [bounds.getNorth(), centre.lng],
+            [bounds.getSouth(), centre.lng]
+        ], { color: "red" });
 
-        const se = L.rectangle([
-            [bounds.getSouth(), centre.lng], // sw
-            [centre.lat, bounds.getEast()] //ne
-        ]);
+        const horizontal = L.polyline([
+            [centre.lat, bounds.getWest()],
+            [centre.lat, bounds.getEast()]
+        ], { color: "red" });
 
-        const sw = L.rectangle([
-            bounds.getSouthWest(), // sw
-            centre //ne
-        ]);
+        const upperHorizontal = L.polyline([
+            [centre.lat + ((bounds.getNorth() - centre.lat) / 2), bounds.getWest()],
+            [centre.lat + ((bounds.getNorth() - centre.lat) / 2), bounds.getEast()]
+        ], { color: "red" });
 
-        const quarters = L.layerGroup([nw, ne, se, sw]);
+        const lowerHorizontal = L.polyline([
+            [centre.lat - ((centre.lat - bounds.getSouth()) / 2), bounds.getWest()],
+            [centre.lat - ((centre.lat - bounds.getSouth()) / 2), bounds.getEast()]
+        ], { color: "red" });
+
+        const quarters = L.layerGroup([box, vertical, horizontal, upperHorizontal, lowerHorizontal]);
 
         map.fitBounds(bounds);
 
@@ -129,10 +131,8 @@
         // ancientWoodland.features = ancientWoodland.features.filter((feature) =>
         //     feature.properties.NAME.length > 1);
 
-        const romanRoads = await (await fetch("http://localhost:3000/gis/roman-roads.geojson")).json();
         const rivers = await (await fetch("http://localhost:3000/gis/rivers.geojson")).json();
-        const paths = await (await fetch("http://localhost:3000/gis/paths.geojson")).json();
-        
+        const paths = await (await fetch("http://localhost:3000/gis/paths.geojson")).json();        
         const areas = await (await fetch("http://localhost:3000/gis/areas.geojson")).json();
         const barrows = await (await fetch("http://localhost:3000/gis/barrows.geojson")).json();
         const caves = await (await fetch("http://localhost:3000/gis/caves.geojson")).json();
@@ -141,7 +141,18 @@
         const points = await (await fetch("http://localhost:3000/gis/points.geojson")).json();
         const stones = await (await fetch("http://localhost:3000/gis/stones.geojson")).json();
         const villages = await (await fetch("http://localhost:3000/gis/villages.geojson")).json();
-        const woods = await (await fetch("http://localhost:3000/gis/woods.geojson")).json();
+        const woods = await (await fetch("http://localhost:3000/gis/woods.geojson")).json();        
+
+        paths.features = paths.features.filter((feature) => 
+            feature.properties.name === "Margary 71a" ||
+            feature.properties.name === "Margary 71b" ||
+            feature.properties.name === "Margary 710a" ||
+            feature.properties.name === "Margary 710b" ||
+            feature.properties.name === "Margary 711" ||
+            feature.properties.name === "Margary 713" ||
+            feature.properties.name === "Margary 714" ||
+            !feature.properties.name.startsWith("Margary") 
+        );
 
         // add layer control
         const overlay = {
@@ -149,7 +160,6 @@
             "Peak District": peakDistrictLayer,
             "Quarters": quarters,
             "National Character Areas": L.geoJSON(nca, { style: { color: "black" } }),
-            "Roman Roads": L.geoJSON(romanRoads),
             "Rivers": L.geoJSON(rivers),
             // "Ancient Woodland": L.geoJSON(ancientWoodland, { style: { color: "green" } }),
             "Areas": geojsonToMarkerLayer(areas, "orange"),
@@ -161,7 +171,6 @@
             "Stones": geojsonToMarkerLayer(stones, "magenta"),
             "Villages": geojsonToMarkerLayer(villages, "cyan"),
             "Woods": geojsonToMarkerLayer(woods, "yellow"),
-
             "Paths": L.geoJSON(paths, { style: { color: "black" } }),
         };
 

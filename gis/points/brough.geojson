@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Brough"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.728648,
+            53.339245
+        ]
+    }
+}

@@ -43,6 +43,19 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Blackstone's Low"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.687772,
+          53.095542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Bleaklow Stones"
       },
       "geometry": {
@@ -50,6 +63,19 @@
         "coordinates": [
           -1.830942,
           53.463638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Brough"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.728648,
+          53.339245
         ]
       }
     },
@@ -303,13 +329,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Navio"
+        "name": "Mount Famine"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.728648,
-          53.339245
+          -1.916868,
+          53.361185
         ]
       }
     },
@@ -505,6 +531,19 @@
         "coordinates": [
           -1.848737,
           53.28533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Wolfscote Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.796676,
+          53.121985
         ]
       }
     },
