@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Irontongue Hill"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.982465,
+            53.502482
+        ]
+    }
+}

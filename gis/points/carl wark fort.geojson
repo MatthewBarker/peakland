@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Carl Wark Fort"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.611829,
+            53.32939
+        ]
+    }
+}

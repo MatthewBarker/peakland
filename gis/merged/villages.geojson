@@ -1,0 +1,83 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bakewell"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.683616,
+          53.201682
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Buxton"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.92149,
+          53.258454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Eyam"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.675003,
+          53.28404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hartington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.807697,
+          53.141305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tideswell"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.772491,
+          53.278712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tissington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.738138,
+          53.067505
+        ]
+      }
+    }
+  ]
+}

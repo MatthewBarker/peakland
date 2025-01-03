@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Padley Gorge"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.621745,
+            53.310813
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Windgather Rocks"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -2.009197,
+            53.302665
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Lud's Church"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -2.032297,
+            53.19343
+        ]
+    }
+}

@@ -1,0 +1,369 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Alderman's Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.978231,
+          53.538251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Alphin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.997001,
+          53.522035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Axe Edge Moor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.971932,
+          53.230492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Black Clough"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.827943,
+          53.48954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bleaklow Stones"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.842525,
+          53.469285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Blindstones"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.945492,
+          53.508637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Boggart Stones"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.96321,
+          53.552372
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Charnel Holes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.962419,
+          53.52118
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Doxey Pool"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.995637,
+          53.162681
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Emlin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.640272,
+          53.436491
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hurkling Stones"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.69778,
+          53.38622
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Irontongue Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.982465,
+          53.502482
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lad's Leap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.921345,
+          53.495379
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lose Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.771599,
+          53.364991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mount Famine"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.916868,
+          53.361185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pike Lowe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.686085,
+          53.472233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ramshaw Rocks"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.972532,
+          53.159012
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Rookery Wood"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.079911,
+          53.186926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shepherds Meeting Stones"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.78664,
+          53.479265
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sponds Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.044851,
+          53.319693
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Swamp"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.843931,
+          53.450662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "West Nab"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.88599,
+          53.575698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "White Stones"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.825835,
+          53.472518
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Wicken Stones"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.890714,
+          53.579949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Wildboarclough"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.036946,
+          53.223316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Wilderness"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.95961,
+          53.508139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Win Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.720801,
+          53.362382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Withered Low"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.848737,
+          53.28533
+        ]
+      }
+    }
+  ]
+}

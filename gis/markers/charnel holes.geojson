@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Charnel Holes"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.962419,
+            53.52118
+        ]
+    }
+}

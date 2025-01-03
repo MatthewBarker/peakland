@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Bellhag Wood"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.770404,
+            53.393869
+        ]
+    }
+}

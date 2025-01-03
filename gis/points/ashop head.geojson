@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Ashop Head"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.909551,
+            53.410603
+        ]
+    }
+}

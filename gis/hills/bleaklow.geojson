@@ -1,13 +1,13 @@
 {
     "type": "Feature",
     "properties": {
-        "name": "Bleaklow Head"
+        "name": "Bleaklow"
     },
     "geometry": {
         "type": "Point",
         "coordinates": [
-            -1.863927,
-            53.461163
+            -1.861793,
+            53.459981
         ]
     }
 }

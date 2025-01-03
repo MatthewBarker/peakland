@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "White Stones"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.825835,
+            53.472518
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Kinder Downfall"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.876839,
+            53.397172
+        ]
+    }
+}

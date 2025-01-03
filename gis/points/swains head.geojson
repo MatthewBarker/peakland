@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Swains Head"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.801492,
+            53.481037
+        ]
+    }
+}

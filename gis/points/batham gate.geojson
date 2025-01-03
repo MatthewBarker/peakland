@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Batham Gate"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.890843,
+            53.278895
+        ]
+    }
+}

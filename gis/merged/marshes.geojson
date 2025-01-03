@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Black Moss"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.939199,
+          53.575815
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bleakmires Moss"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.836994,
+          53.52021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Featherbed Moss"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.938675,
+          53.512991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kinder Downfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.876839,
+          53.397172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "White Path Moss"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.634542,
+          53.349187
+        ]
+      }
+    }
+  ]
+}

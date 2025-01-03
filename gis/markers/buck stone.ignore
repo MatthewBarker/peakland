@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Buck Stone"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.647361,
+            53.360158
+        ]
+    }
+}

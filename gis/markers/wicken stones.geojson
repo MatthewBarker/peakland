@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Wicken Stones"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.890714,
+            53.579949
+        ]
+    }
+}
