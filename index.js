@@ -113,10 +113,10 @@ const quarters = L.layerGroup([
 
 map.fitBounds(bounds);
 
-// const ancientWoodland = await (await fetch("http://localhost:3000/gis/downloads/ancient-woodland.geojson")).json();
+const ancientWoodland = await (await fetch("http://localhost:3000/gis/downloads/ancient-woodland.geojson")).json();
 
-// ancientWoodland.features = ancientWoodland.features.filter((feature) =>
-//     feature.properties.NAME.length > 1);
+ancientWoodland.features = ancientWoodland.features.filter((feature) =>
+    feature.properties.NAME.length > 1);
 
 const areas = await (
   await fetch("http://localhost:3000/gis/merged/areas.geojson")
@@ -174,25 +174,25 @@ const overlay = {
   Quarters: quarters,
   "National Character Areas": L.geoJSON(nca, { style: { color: "orange" } }),
   Rivers: L.geoJSON(rivers),
-  // "Ancient Woodland": L.geoJSON(ancientWoodland, {
-  //     style: { color: "green" },
-  //     onEachFeature: function(feature, layer) {
-  //         layer.bindPopup(feature.properties.NAME);
-  //         layer.on('mouseover', function() { layer.openPopup(); });
-  //         layer.on('mouseout', function() { layer.closePopup(); });
-  //     }
-  // }),
+  "Ancient Woodland": L.geoJSON(ancientWoodland, {
+      style: { color: "green" },
+      onEachFeature: function(feature, layer) {
+          layer.bindPopup(feature.properties.NAME);
+          layer.on('mouseover', function() { layer.openPopup(); });
+          layer.on('mouseout', function() { layer.closePopup(); });
+      }
+  }),
   Areas: geojsonToMarkerLayer(areas, "orange"),
-  Barrows: geojsonToMarkerLayer(barrows, "brown"),
-  Caves: geojsonToMarkerLayer(caves, "red"),
-  Hills: geojsonToMarkerLayer(hills, "green"),
-  Markers: geojsonToMarkerLayer(markers, "gray"),
-  Marshes: geojsonToMarkerLayer(marshes, "blue"),
-  Points: geojsonToMarkerLayer(points, "black"),
-  Stones: geojsonToMarkerLayer(stones, "magenta"),
-  Villages: geojsonToMarkerLayer(villages, "cyan"),
-  Woods: geojsonToMarkerLayer(woods, "yellow"),
-  Paths: L.geoJSON(paths, { style: { color: "black" } }),
+  Barrows: geojsonToMarkerLayer(barrows, "brown").addTo(map),
+  Caves: geojsonToMarkerLayer(caves, "red").addTo(map),
+  Hills: geojsonToMarkerLayer(hills, "green").addTo(map),
+  Markers: geojsonToMarkerLayer(markers, "gray").addTo(map),
+  Marshes: geojsonToMarkerLayer(marshes, "blue").addTo(map),
+  Points: geojsonToMarkerLayer(points, "black").addTo(map),
+  Stones: geojsonToMarkerLayer(stones, "magenta").addTo(map),
+  Villages: geojsonToMarkerLayer(villages, "cyan").addTo(map),
+  Woods: geojsonToMarkerLayer(woods, "yellow").addTo(map),
+  Paths: L.geoJSON(paths, { style: { color: "black" } }).addTo(map),
 };
 
 L.control.layers(null, overlay).addTo(map);

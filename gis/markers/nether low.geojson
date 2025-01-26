@@ -1,13 +1,13 @@
 {
     "type": "Feature",
     "properties": {
-        "name": "Axe Edge Moor"
+        "name": "Nether Low"
     },
     "geometry": {
         "type": "Point",
         "coordinates": [
-            -1.963225,
-            53.234611
+            -1.835428,
+            53.220692
         ]
     }
 }

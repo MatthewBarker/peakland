@@ -1,13 +1,13 @@
 {
     "type": "Feature",
     "properties": {
-        "name": "Shepherd's Meeting Stones"
+        "name": "Hanging Stone"
     },
     "geometry": {
         "type": "Point",
         "coordinates": [
-            -1.78664,
-            53.479265
+            -2.039448,
+            53.186034
         ]
     }
 }

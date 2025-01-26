@@ -1,13 +1,13 @@
 {
     "type": "Feature",
     "properties": {
-        "name": "Shepherd's Meeting Stones"
+        "name": "Baslow"
     },
     "geometry": {
         "type": "Point",
         "coordinates": [
-            -1.78664,
-            53.479265
+            -1.61709,
+            53.248946
         ]
     }
 }

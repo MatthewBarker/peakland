@@ -17,6 +17,19 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Axe Edge Moor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.973708,
+          53.241535
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Back Tor"
       },
       "geometry": {
@@ -30,39 +43,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Batham Gate"
+        "name": "Baslow"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.890843,
-          53.278895
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Black Brook"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.899742,
-          53.326203
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Blackstone's Low"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.687772,
-          53.095542
+          -1.61709,
+          53.248946
         ]
       }
     },
@@ -82,6 +69,19 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Bull Ring"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.883762,
+          53.301084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Burbage Rocks"
       },
       "geometry": {
@@ -95,78 +95,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Carl Wark Fort"
+        "name": "Great Low"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.611829,
-          53.32939
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Crowden"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.858402,
-          53.382507
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Eagle Stone"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.607318,
-          53.259501
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Giant's Hole"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.820266,
-          53.340677
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Gibbet Wood"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.589169,
-          53.238046
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Goyt's Moss"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.973708,
-          53.241535
+          -1.836195,
+          53.212513
         ]
       }
     },
@@ -199,32 +134,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "High Rake"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.681748,
-          53.259031
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "High Wheeldon"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.851322,
-          53.192052
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Holme Moss"
       },
       "geometry": {
@@ -232,19 +141,6 @@
         "coordinates": [
           -1.865342,
           53.535157
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Hurkling Stone"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.597533,
-          53.295821
         ]
       }
     },
@@ -277,13 +173,26 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Lord's Seat"
+        "name": "Mag Low"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.832532,
-          53.347962
+          -1.899742,
+          53.326203
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mam Tor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.813627,
+          53.347572
         ]
       }
     },
@@ -433,6 +342,32 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Totley Moss"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.598637,
+          53.306915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Wardlow Mires"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.729667,
+          53.277192
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Wessenden Head"
       },
       "geometry": {
@@ -479,19 +414,6 @@
         "coordinates": [
           -1.796676,
           53.121985
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Wormhill"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.814321,
-          53.269268
         ]
       }
     }

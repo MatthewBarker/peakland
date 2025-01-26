@@ -1,13 +1,13 @@
 {
     "type": "Feature",
     "properties": {
-        "name": "Shepherd's Meeting Stones"
+        "name": "Hobs House"
     },
     "geometry": {
         "type": "Point",
         "coordinates": [
-            -1.78664,
-            53.479265
+            -1.734937,
+            53.237626
         ]
     }
 }

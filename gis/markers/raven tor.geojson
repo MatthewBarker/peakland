@@ -1,13 +1,13 @@
 {
     "type": "Feature",
     "properties": {
-        "name": "Shepherd's Meeting Stones"
+        "name": "Raven Tor"
     },
     "geometry": {
         "type": "Point",
         "coordinates": [
-            -1.78664,
-            53.479265
+            -1.579493,
+            53.19985
         ]
     }
 }

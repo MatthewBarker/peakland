@@ -1,13 +1,13 @@
 {
     "type": "Feature",
     "properties": {
-        "name": "Shepherd's Meeting Stones"
+        "name": "Wardlow Mires"
     },
     "geometry": {
         "type": "Point",
         "coordinates": [
-            -1.78664,
-            53.479265
+            -1.729667,
+            53.277192
         ]
     }
 }

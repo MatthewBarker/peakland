@@ -30,19 +30,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Mam Tor"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.813627,
-          53.347572
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Margery Hill"
       },
       "geometry": {
@@ -76,6 +63,19 @@
         "coordinates": [
           -2.009584,
           53.260728
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tegg's Nose"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.079658,
+          53.247992
         ]
       }
     }

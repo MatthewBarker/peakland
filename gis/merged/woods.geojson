@@ -4,26 +4,26 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Bellhag Wood"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.770404,
-          53.393869
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Dovedale Wood"
+        "name": "Dovedale"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -1.78706,
           53.071599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hope Woodlands"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.788992,
+          53.402806
         ]
       }
     },
@@ -74,8 +74,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.621745,
-          53.310813
+          -1.606612,
+          53.321335
         ]
       }
     }

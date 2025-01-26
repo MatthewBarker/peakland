@@ -4,19 +4,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Axe Edge Moor"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.963225,
-          53.234611
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Bleaklow"
       },
       "geometry": {
@@ -82,6 +69,32 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "High Peak"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.870642,
+          53.356016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hope Forest"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.802386,
+          53.42375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Howden Moors"
       },
       "geometry": {
@@ -102,19 +115,6 @@
         "coordinates": [
           -1.861865,
           53.389825
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Peak Forest"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.831223,
-          53.313133
         ]
       }
     },

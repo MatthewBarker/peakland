@@ -1,13 +1,13 @@
 {
     "type": "Feature",
     "properties": {
-        "name": "Axe Edge Moor"
+        "name": "Bull Ring Henge"
     },
     "geometry": {
         "type": "Point",
         "coordinates": [
-            -1.971932,
-            53.230492
+            -1.883598,
+            53.301068
         ]
     }
 }

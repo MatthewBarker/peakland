@@ -1,13 +1,13 @@
 {
     "type": "Feature",
     "properties": {
-        "name": "Peak Forest"
+        "name": "Dovedale"
     },
     "geometry": {
         "type": "Point",
         "coordinates": [
-            -1.831223,
-            53.313133
+            -1.78706,
+            53.071599
         ]
     }
 }

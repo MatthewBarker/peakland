@@ -30,13 +30,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Long Low"
+        "name": "Lord's Seat"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.819429,
-          53.08227
+          -1.832532,
+          53.347962
         ]
       }
     },
@@ -63,6 +63,19 @@
         "coordinates": [
           -1.688533,
           53.112329
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pike Lowe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.686085,
+          53.472233
         ]
       }
     }

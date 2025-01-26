@@ -1,16 +1,49 @@
 # Dark Peak
-1. Black Moss
-2. Black Hill
-3. Featherbed Moss
-4. Bleakmires Moss
-5. Bleaklow
-6. Margery Hill
-7. Kinder Bank
-8. Kinder Downfall
-9. Bellhag Wood
-10. Hordron Edge
-11. Mam Tor
-12. ???
+1. Black Moss (M)
+2. Black Hill (H)
+3. Featherbed Moss (M)
+4. Bleakmires Moss (M)
+5. Bleaklow (H)
+6. Margery Hill (H)
+7. Kinder Bank (W)
+8. Kinder Downfall (M)
+9. Hope Woodlands (W)
+10. Hordron Edge (S)
+11. Lords Seat (B)
+12. Pike Lowe (B)
+
+# White Peak
+1. Peak Cavern (C)
+2. Eldon Hole (C)
+3. Poole's Cavern (C)
+4. Monsal Dale (W)
+5. Five Wells (B)
+6. Parkhouse Hill (H) - move to West borders?
+7. Lathkill Cavern (C)
+8. Arbor Low (S)
+9. Minning Low (B)
+10. Thor's Cave (C)
+11. Dovedale (W)
+12. Harboro' Rocks (C)
+
+# Borders
+## East
+1. White Path Moss (M)
+2. Padley Gorge (W)
+3. Wet Withens (S)
+4. Barbrook (S)
+5. Hob Hurst's House (B)
+6. Nine Ladies (S)
+7. Nine Stones (S)
+## West
+8. Shining Tor (H)
+9. Lud's Church (W)
+10. Merryton Low (B)
+11. Tegg's Nose (H)
+12. Goyt's Moss (M)
+
+# Priority Habitats Inventory (England)
+https://www.arcgis.com/apps/mapviewer/index.html?panel=gallery&layers=39403df11c8044d998772db5b54ad86c
 
 # Derbyshire Historic Environment Record
 

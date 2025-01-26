@@ -1,13 +1,13 @@
 {
     "type": "Feature",
     "properties": {
-        "name": "Gibbet Wood"
+        "name": "Slippery Stones"
     },
     "geometry": {
         "type": "Point",
         "coordinates": [
-            -1.589169,
-            53.238046
+            -1.749165,
+            53.452719
         ]
     }
 }
