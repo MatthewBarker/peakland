@@ -1,0 +1,83 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Black Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.883589,
+          53.538763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bleaklow"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.861793,
+          53.459981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Margery Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.71677,
+          53.457649
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Parkhouse Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.882333,
+          53.19981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shining Tor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.009584,
+          53.260728
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tegg's Nose"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.079658,
+          53.247992
+        ]
+      }
+    }
+  ]
+}

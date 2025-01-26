@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Dead Edge"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.812452,
+            53.51382
+        ]
+    }
+}

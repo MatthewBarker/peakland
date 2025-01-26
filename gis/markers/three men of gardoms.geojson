@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Three Men of Gardom's Edge"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.589101,
+            53.255334
+        ]
+    }
+}

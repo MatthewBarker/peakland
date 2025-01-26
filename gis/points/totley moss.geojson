@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Totley Moss"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.598637,
+            53.306915
+        ]
+    }
+}

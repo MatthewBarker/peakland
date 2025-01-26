@@ -1,0 +1,83 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dovedale"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.78706,
+          53.071599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hope Woodlands"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.788992,
+          53.402806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kinder Bank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.946447,
+          53.379291
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lud's Church"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.032297,
+          53.19343
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Monsal Dale"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.724052,
+          53.24048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Padley Gorge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.606612,
+          53.321335
+        ]
+      }
+    }
+  ]
+}

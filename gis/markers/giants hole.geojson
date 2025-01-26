@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Giant's Hole"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.820266,
+            53.340677
+        ]
+    }
+}

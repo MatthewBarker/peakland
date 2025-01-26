@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Mag Low"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.899742,
+            53.326203
+        ]
+    }
+}

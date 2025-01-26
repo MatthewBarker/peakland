@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Blindstones"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.945492,
+            53.508637
+        ]
+    }
+}

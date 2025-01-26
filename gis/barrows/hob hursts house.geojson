@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Hob Hurst's House"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.569474,
+            53.219635
+        ]
+    }
+}

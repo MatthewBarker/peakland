@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Shepherd's Meeting Stones"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.78664,
+            53.479265
+        ]
+    }
+}

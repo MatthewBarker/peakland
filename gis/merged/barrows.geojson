@@ -1,0 +1,83 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Five Wells"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.81603,
+          53.236252
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hob Hurst's House"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.569474,
+          53.219635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lord's Seat"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.832532,
+          53.347962
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Merryton Low"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.939726,
+          53.14596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Minning Low"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.688533,
+          53.112329
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pike Lowe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.686085,
+          53.472233
+        ]
+      }
+    }
+  ]
+}

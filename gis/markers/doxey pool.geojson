@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Doxey Pool"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.995637,
+            53.162681
+        ]
+    }
+}

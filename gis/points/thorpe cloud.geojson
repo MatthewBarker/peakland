@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Thorpe Cloud"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.775566,
+            53.056429
+        ]
+    }
+}

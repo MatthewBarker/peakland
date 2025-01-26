@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Baslow"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.61709,
+            53.248946
+        ]
+    }
+}

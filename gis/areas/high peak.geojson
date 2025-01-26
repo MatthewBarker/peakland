@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "High Peak"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.870642,
+            53.356016
+        ]
+    }
+}

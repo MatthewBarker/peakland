@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Higher Shelf Stones"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.867621,
+            53.449826
+        ]
+    }
+}

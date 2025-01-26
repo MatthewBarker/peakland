@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Black Hill"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.883589,
+            53.538763
+        ]
+    }
+}

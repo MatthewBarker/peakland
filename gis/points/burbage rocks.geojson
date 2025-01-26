@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Burbage Rocks"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.599258,
+            53.337198
+        ]
+    }
+}

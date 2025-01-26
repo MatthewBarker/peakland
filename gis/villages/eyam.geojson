@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Eyam"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.675003,
+            53.28404
+        ]
+    }
+}

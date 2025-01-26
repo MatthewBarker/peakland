@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "The Dipping Stone"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -2.006868,
+            53.332742
+        ]
+    }
+}

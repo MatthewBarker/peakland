@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Hartington"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.807697,
+            53.141305
+        ]
+    }
+}

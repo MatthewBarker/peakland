@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Black Moss"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.939199,
+            53.575815
+        ]
+    }
+}

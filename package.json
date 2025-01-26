@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "name": "peakland",
+  "version": "1.0.0",
+  "description": "Map\r https://her.derbyshire.gov.uk/map",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@mapbox/geojson-merge": "^1.1.1"
+  }
+}

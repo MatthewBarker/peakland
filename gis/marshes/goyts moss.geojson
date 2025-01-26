@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Goyt's Moss"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.977713,
+            53.254859
+        ]
+    }
+}

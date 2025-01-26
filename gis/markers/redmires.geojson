@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Redmires"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.602552,
+            53.366624
+        ]
+    }
+}

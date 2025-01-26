@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Win Hill"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.720801,
+            53.362382
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Wolfscote Hill"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.796676,
+            53.121985
+        ]
+    }
+}

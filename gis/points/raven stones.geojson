@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Raven Stones"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.949237,
+            53.5395
+        ]
+    }
+}

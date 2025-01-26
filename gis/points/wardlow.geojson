@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Wardlow Mires"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.729667,
+            53.277192
+        ]
+    }
+}

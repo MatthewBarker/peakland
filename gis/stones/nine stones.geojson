@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Nine Stones"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.667765,
+            53.160488
+        ]
+    }
+}

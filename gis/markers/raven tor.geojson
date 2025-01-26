@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Raven Tor"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.579493,
+            53.19985
+        ]
+    }
+}

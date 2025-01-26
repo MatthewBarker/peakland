@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Hanging Stone"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -2.039448,
+            53.186034
+        ]
+    }
+}

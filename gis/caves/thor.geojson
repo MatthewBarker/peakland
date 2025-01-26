@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Thor's Cave"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.854876,
+            53.09171
+        ]
+    }
+}

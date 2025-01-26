@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "The Swamp"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.843931,
+            53.450662
+        ]
+    }
+}

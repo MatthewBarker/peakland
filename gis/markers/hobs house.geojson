@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Hobs House"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.734937,
+            53.237626
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Kinder Scout"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.861865,
+            53.389825
+        ]
+    }
+}

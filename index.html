@@ -1,132 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OS Maps API | Basic Map ZXY (EPSG:27700) | Leaflet</title>
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/OrdnanceSurvey/os-api-branding@0.3.1/os-api-branding.css" />
+    <title>Peakland</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            position: absolute;
-            bottom: 0;
-            top: 0;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
     <div id="map"></div>
 
-    <script src="https://cdn.jsdelivr.net/gh/OrdnanceSurvey/os-api-branding@0.3.1/os-api-branding.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.0/proj4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js"></script>
     <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
-    <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.js"></script>
-    <script type="module">
-        const keyResponse = await fetch('http://localhost:3000/key.txt');
-        const key = await keyResponse.text();
-        const api = "https://api.os.uk/maps/raster/v1/zxy/Leisure_27700/{z}/{x}/{y}.png?key=" + key;
-
-        // setup the EPSG:27700 (British National Grid) projection
-        const crs = new L.Proj.CRS("EPSG:27700", "+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.06,0.15,0.247,0.842,-20.489 +units=m +no_defs", {
-            resolutions: [896.0, 448.0, 224.0, 112.0, 56.0, 28.0, 14.0, 7.0, 3.5, 1.75],
-            origin: [-238375.0, 1376256.0]
-        });
-
-        // centre on Mam Tor
-        const mapOptions = {
-            crs: crs,
-            center: [53.34917, -1.809498],
-            zoom: 3,
-            drawControl: true,
-        };
-
-        const map = L.map("map", mapOptions);
-
-        // add drawing layer
-        const drawnItems = L.featureGroup().addTo(map);
-
-        map.on(L.Draw.Event.CREATED, function (event) {
-            drawnItems.addLayer(event.layer);
-            console.log(event.layer.toGeoJSON());
-        });
-
-        // add regions
-        const blackHillResponse = await fetch('http://localhost:3000/regions/blackHill.json');
-        const blackHill = await blackHillResponse.json();
-
-        L.geoJSON(blackHill, { style: { color: "red" } }).addTo(map);
-
-        const bleaklowResponse = await fetch('http://localhost:3000/regions/bleaklow.json');
-        const bleaklow = await bleaklowResponse.json();
-
-        L.geoJSON(bleaklow, { style: { color: "green" } }).addTo(map);
-
-        const highPeakResponse = await fetch('http://localhost:3000/regions/highPeak.json');
-        const highPeak = await highPeakResponse.json();
-
-        L.geoJSON(highPeak, { style: { color: "blue" } }).addTo(map);
-
-        const southWestPeakResponse = await fetch('http://localhost:3000/regions/southWestPeak.json');
-        const southWestPeak = await southWestPeakResponse.json();
-
-        L.geoJSON(southWestPeak, { style: { color: "cyan" } }).addTo(map);
-
-        const whitePeakResponse = await fetch('http://localhost:3000/regions/whitePeak.json');
-        const whitePeak = await whitePeakResponse.json();
-
-        L.geoJSON(whitePeak, { style: { color: "magenta" } }).addTo(map);
-
-        const easternMoorResponse = await fetch('http://localhost:3000/regions/easternMoor.json');
-        const easternMoor = await easternMoorResponse.json();
-
-        L.geoJSON(easternMoor, { style: { color: "yellow" } }).addTo(map);
-
-        // add points
-        const pointsResponse = await fetch('http://localhost:3000/points.yaml');
-        const pointsText = await pointsResponse.text();
-        const points = jsyaml.load(pointsText);
-        const blackHillMarkers = points.blackHill.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'red' }).bindTooltip(item.name));
-        const bleaklowMarkers = points.bleaklow.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'green' }).bindTooltip(item.name));
-        const highPeakMarkers = points.highPeak.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'blue' }).bindTooltip(item.name));
-        const whitePeakMarkers = points.whitePeak.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'magenta' }).bindTooltip(item.name));
-        const easternMoorsMarkers = points.easternMoors.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'yellow' }).bindTooltip(item.name));
-        const southWesternPeakMarkers = points.southWesternPeak.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'cyan' }).bindTooltip(item.name));
-        const villagesMarkers = points.villages.map((item) => L.circleMarker(item.coords, { radius: 10, color: 'black' }).bindTooltip(item.name));
-
-        const overlay = {
-            "Black Hill": L.featureGroup(blackHillMarkers).addTo(map),
-            "Bleaklow": L.featureGroup(bleaklowMarkers).addTo(map),
-            "High Peak": L.featureGroup(highPeakMarkers).addTo(map),
-            "White Peak": L.featureGroup(whitePeakMarkers).addTo(map),
-            "Eastern Moors": L.featureGroup(easternMoorsMarkers).addTo(map),
-            "South Western Peak": L.featureGroup(southWesternPeakMarkers).addTo(map),
-            "Villages": L.featureGroup(villagesMarkers).addTo(map),
-            "Map": L.tileLayer(api).addTo(map),
-        };
-
-        L.control.layers(null, overlay).addTo(map);
-
-        const allPoints = points.blackHill.concat(points.bleaklow, points.highPeak,
-            points.whitePeak, points.easternMoors, points.southWesternPeak, points.villages);
-
-        points.routes.forEach((route) => {
-            const coords = route.points.map((point) => allPoints.find((item) => item.name == point).coords);
-
-            L.polyline(coords, { dashArray: '5' }).bindTooltip(route.name).addTo(map);
-        });
-    </script>
+    <script type="module" src="index.js"></script>
 </body>
 
 </html>

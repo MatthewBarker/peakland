@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Hob Thurst's Cave"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.855661,
+            53.238635
+        ]
+    }
+}

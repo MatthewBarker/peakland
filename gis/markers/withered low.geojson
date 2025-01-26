@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Withered Low"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.848737,
+            53.28533
+        ]
+    }
+}

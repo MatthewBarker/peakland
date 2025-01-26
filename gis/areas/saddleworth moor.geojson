@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Saddleworth Moor"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.946025,
+            53.549047
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Bakewell"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.683616,
+            53.201682
+        ]
+    }
+}

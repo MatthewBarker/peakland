@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Bleakmires Moss"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.836994,
+            53.52021
+        ]
+    }
+}

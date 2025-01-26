@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "High Rake"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.681748, 
+            53.259031
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Stanton Moor"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.63061,
+            53.165931
+        ]
+    }
+}

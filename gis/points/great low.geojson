@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Great Low"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.836195,
+            53.212513
+        ]
+    }
+}

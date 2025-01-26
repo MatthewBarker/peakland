@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Harboro' Rocks"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.639134,
+            53.094839
+        ]
+    }
+}

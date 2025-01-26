@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Mount Famine"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.916868,
+            53.361185
+        ]
+    }
+}

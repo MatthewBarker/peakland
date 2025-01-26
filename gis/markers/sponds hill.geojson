@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Sponds Hill"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -2.044851,
+            53.319693
+        ]
+    }
+}

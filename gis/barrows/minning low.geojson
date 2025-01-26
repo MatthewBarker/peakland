@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Minning Low"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.688533,
+            53.112329
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Bull Ring"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.883762,
+            53.301084
+        ]
+    }
+}

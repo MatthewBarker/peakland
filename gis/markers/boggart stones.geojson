@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Boggart Stones"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.96321,
+            53.552372
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Tegg's Nose"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -2.079658,
+            53.247992
+        ]
+    }
+}

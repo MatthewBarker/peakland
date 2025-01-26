@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "West Nab"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.88599,
+            53.575698
+        ]
+    }
+}

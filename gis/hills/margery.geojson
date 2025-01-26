@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Margery Hill"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -1.71677,
+            53.457649
+        ]
+    }
+}
