@@ -67,7 +67,7 @@ const peakDistrictLayer = L.geoJSON(peakDistrict, {
 });
 const bounds = peakDistrictLayer.getBounds();
 const centre = bounds.getCenter();
-
+console.log(bounds);
 // lat = y, lng = x
 const box = L.rectangle(bounds, { color: "red", fill: false });
 
