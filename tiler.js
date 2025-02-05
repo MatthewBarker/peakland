@@ -1,32 +1,46 @@
-maptilersdk.config.apiKey = "0RjFOsJ3u4UQ4R4pvEEn";
+const key = await fetch("http://localhost:3000/map-tiler-key.txt");
+
+maptilersdk.config.apiKey = await key.text();
 
 const map = new maptilersdk.Map({
   container: "map",
   style: maptilersdk.MapStyle.OUTDOOR,
 });
 
-const peakDistrict = await (
-  await fetch("http://localhost:3000/gis/downloads/peak-district.geojson")
-).json();
+const addPoints = (id, path, colour) => {
+  map.addSource(id, {
+    type: "geojson",
+    data: path,
+  });
 
-const bounds = [Infinity, Infinity, -Infinity, -Infinity];
+  map.addLayer({
+    id: id,
+    type: "circle",
+    source: id,
+    paint: {
+      "circle-radius": 10,
+      "circle-color": colour,
+    },
+  });
 
-const findBounds = function (coords) {
-  if (Array.isArray(coords[0])) {
-    coords.map((coord) => findBounds(coord));
-  } else {
-    bounds[0] = Math.min(bounds[0], coords[0]);
-    bounds[1] = Math.min(bounds[1], coords[1]);
-    bounds[2] = Math.max(bounds[2], coords[0]);
-    bounds[3] = Math.max(bounds[3], coords[1]);
-  }
+  const popup = new maptilersdk.Popup({
+    closeButton: false,
+    closeOnClick: false,
+  });
+
+  map.on("mouseenter", id, function (e) {
+    const coordinates = e.features[0].geometry.coordinates;
+    const name = e.features[0].properties.name;
+
+    popup.setLngLat(coordinates).setHTML(name).addTo(map);
+  });
+
+  map.on("mouseleave", id, function () {
+    popup.remove();
+  });
 };
 
-findBounds(peakDistrict.geometry.coordinates);
-
-console.log(bounds);
-
-map.on("load", function () {
+const onLoad = async () => {
   map.addSource("terrain", {
     type: "raster-dem",
     url: `https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json`,
@@ -45,41 +59,102 @@ map.on("load", function () {
     },
   });
 
-  console.log(map.addSource("peakDistrict", {
+  map.addSource("peakDistrict", {
     type: "geojson",
-    data: peakDistrict,
-  }));
+    data: "gis/downloads/peak-district.geojson",
+  });
+
+  map.addSource("nca", {
+    type: "geojson",
+    data: "gis/downloads/national-character-areas.geojson",
+  });
+
+  map.addSource("ancientWoods", {
+    type: "geojson",
+    data: "gis/downloads/ancient-woodland.geojson",
+  });
+
+  map.addSource("rivers", {
+    type: "geojson",
+    data: "gis/merged/rivers.geojson",
+  });
 
   map.addLayer({
     id: "peakDistrict",
     type: "line",
     source: "peakDistrict",
-    layout: {},
     paint: {
       "line-color": "yellow",
       "line-width": 6,
     },
   });
 
-  maptilersdk.helpers.addPolygon(map, {
-    data: "gis/downloads/peak-district.geojson",
-    fillOpacity: 0.5,
+  map.addLayer({
+    id: "nca",
+    type: "line",
+    source: "nca",
+    paint: {
+      "line-color": "orange",
+      "line-width": 6,
+    },
   });
 
-  map.fitBounds(bounds, {
+  map.addLayer({
+    id: "ancientWoods",
+    type: "line",
+    source: "ancientWoods",
+    paint: {
+      "line-color": "green",
+      "line-width": 6,
+    },
+  });
+
+  map.addLayer({
+    id: "rivers",
+    type: "line",
+    source: "rivers",
+    paint: {
+      "line-color": "blue",
+      "line-width": 6,
+    },
+  });
+
+  addPoints("areas", "gis/merged/areas.geojson", "orange");
+  addPoints("barrows", "gis/merged/barrows.geojson", "brown");
+  addPoints("caves", "gis/merged/caves.geojson", "red");
+  addPoints("hills", "gis/merged/hills.geojson", "green");
+  addPoints("markers", "gis/merged/markers.geojson", "gray");
+  addPoints("marshes", "gis/merged/marshes.geojson", "blue");
+  addPoints("points", "gis/merged/points.geojson", "black");
+  addPoints("stones", "gis/merged/stones.geojson", "magenta");
+  addPoints("villages", "gis/merged/villages.geojson", "cyan");
+  addPoints("woods", "gis/merged/woods.geojson", "yellow");
+
+  map.fitBounds([-2.107998, 53.033855, -1.515579, 53.597859], {
     padding: 20,
   });
 
   const targets = {
-    peakDistrict: "Peak district"
+    peakDistrict: "Peak district",
+    nca: "National Character Areas",
+    ancientWoods: "Ancient woods",
+    rivers: "Rivers",
+    areas: "areas",
+    barrows: "Barrows",
+    caves: "Caves",
+    hills: "Hills",
+    markers: "Markers",
+    marshes: "Marshes",
+    points: "Points",
+    stones: "Stones",
+    villages: "Villages",
+    woods: "Woods",
   };
 
-  const options = {
-    showDefault: true,
-    showCheckbox: true,
-    onlyRendered: true,
-    reverseOrder: true
-  };
+  map.addControl(
+    new MaplibreLegendControl.MaplibreLegendControl(targets),
+    "bottom-left"
+  );
+};
 
-  map.addControl(new MaplibreLegendControl.MaplibreLegendControl(targets, options), "bottom-left");
-});
+map.on("load", onLoad);

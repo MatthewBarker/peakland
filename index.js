@@ -1,4 +1,4 @@
-const keyResponse = await fetch("http://localhost:3000/key.txt");
+const keyResponse = await fetch("http://localhost:3000/os-key.txt");
 const key = await keyResponse.text();
 const api =
   "https://api.os.uk/maps/raster/v1/zxy/Leisure_27700/{z}/{x}/{y}.png?key=" +
