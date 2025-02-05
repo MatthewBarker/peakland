@@ -1,4 +1,4 @@
-const key = await fetch("http://localhost:3000/keys/map-tiler.txt");
+const key = await fetch("../keys/map-tiler.txt");
 
 maptilersdk.config.apiKey = await key.text();
 
