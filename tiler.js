@@ -31,7 +31,7 @@ const map = new maptilersdk.Map({
             {
                 id: "osgb63k1885",
                 type: "raster",
-                source: "osgb1888",
+                source: "osgb63k1885",
                 minzoom: 1,
                 maxzoom: 16,
             },
