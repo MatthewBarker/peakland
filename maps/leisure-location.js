@@ -2,6 +2,9 @@ const keyResponse = await fetch("../keys/os.txt");
 const key = await keyResponse.text();
 const api = "https://api.os.uk/maps/raster/v1/zxy/Leisure_27700/{z}/{x}/{y}.png?key=" + key;
 
+const mapMarkerResponse = await fetch("../assets/map-marker-1.svg");
+const mapMarker = await mapMarkerResponse.text();
+
 // setup the EPSG:27700 (British National Grid) projection
 const crs = new L.Proj.CRS(
     "EPSG:27700",
@@ -12,28 +15,16 @@ const crs = new L.Proj.CRS(
     }
 );
 
-const map = L.map("map", { crs: crs, minZoom: 0, maxZoom: 9 });
-const bounds = new L.LatLngBounds([[53.033855, -2.107998], [53.597859, -1.515579]]);
-
-L.tileLayer(api).addTo(map);
-map.fitBounds(bounds);
-
 function onLocationFound(e) {
-    const radius = e.accuracy;
-
     L.marker(e.latlng).addTo(map)
-        .bindPopup("You are within " + radius + " meters from this point").openPopup();
+        .bindPopup("You are within " + e.accuracy + " meters from this point").openPopup();
 
     L.circle(e.latlng, radius).addTo(map);
 }
 
-map.on("locationfound", onLocationFound);
-
 function onLocationError(e) {
     alert(e.message);
 }
-
-map.on("locationerror", onLocationError);
 
 L.Control.Locate = L.Control.extend({
     onAdd: function(map) {
@@ -47,9 +38,8 @@ L.Control.Locate = L.Control.extend({
         });
 
         container.title = "Locate";
-        button.style.fontSize = "2em";
         button.style.cursor = "pointer";
-        button.innerHTML = "⮙";
+        button.innerHTML = mapMarker;
 
         return container;
     },
@@ -57,8 +47,15 @@ L.Control.Locate = L.Control.extend({
     onRemove: function(map) {}
 });
 
-L.control.locate = function(opts) {
-    return new L.Control.Locate(opts);
+L.control.locate = function(options) {
+    return new L.Control.Locate(options);
 }
 
+const map = L.map("map", { crs: crs, minZoom: 0, maxZoom: 9 });
+const bounds = new L.LatLngBounds([[53.033855, -2.107998], [53.597859, -1.515579]]);
+
+L.tileLayer(api).addTo(map);
+map.fitBounds(bounds);
+map.on("locationfound", onLocationFound);
+map.on("locationerror", onLocationError);
 L.control.locate({ position: "topleft" }).addTo(map);
