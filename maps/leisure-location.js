@@ -47,7 +47,9 @@ L.Control.Locate = L.Control.extend({
         });
 
         container.title = "Locate";
-        button.innerHTML = "<span style=\"font-size: 2em;\">⮙</span>";
+        button.style.fontSize = "2em";
+        button.style.cursor = "pointer";
+        button.innerHTML = "⮙";
 
         return container;
     },
