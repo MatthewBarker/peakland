@@ -13,9 +13,10 @@ const crs = new L.Proj.CRS(
 );
 
 const map = L.map("map", { crs: crs, minZoom: 0, maxZoom: 9 });
+const bounds = new L.LatLngBounds([[53.033855, -2.107998], [53.597859, -1.515579]]);
 
 L.tileLayer(api).addTo(map);
-map.locate({setView: true, maxZoom: 16});
+map.fitBounds(bounds);
 
 function onLocationFound(e) {
     const radius = e.accuracy;
@@ -26,10 +27,36 @@ function onLocationFound(e) {
     L.circle(e.latlng, radius).addTo(map);
 }
 
-map.on('locationfound', onLocationFound);
+map.on("locationfound", onLocationFound);
 
 function onLocationError(e) {
     alert(e.message);
 }
 
-map.on('locationerror', onLocationError);
+map.on("locationerror", onLocationError);
+
+L.Control.Locate = L.Control.extend({
+    onAdd: function(map) {
+        const container = L.DomUtil.create("div", "leaflet-bar leaflet-control");
+        const button = L.DomUtil.create("a", "leaflet-control-button", container);
+
+        L.DomEvent.disableClickPropagation(button);
+        
+        L.DomEvent.on(button, "click", function(){
+            map.locate({setView: true, maxZoom: 16});
+        });
+
+        container.title = "Locate";
+        button.innerHTML = "<span style=\"font-size: 2em;\">⮙</span>";
+
+        return container;
+    },
+
+    onRemove: function(map) {}
+});
+
+L.control.locate = function(opts) {
+    return new L.Control.Locate(opts);
+}
+
+L.control.locate({ position: "topleft" }).addTo(map);
