@@ -21,6 +21,7 @@ const bounds = new L.LatLngBounds([[53.033855, -2.107998], [53.597859, -1.515579
 L.tileLayer(api).addTo(map);
 map.fitBounds(bounds);
 
+// Add locate control
 function onLocationFound(e) {
     L.marker(e.latlng).addTo(map)
         .bindPopup("You are within " + e.accuracy + " meters from this point").openPopup();
