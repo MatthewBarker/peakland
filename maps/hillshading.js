@@ -10,14 +10,14 @@ const map = new maptilersdk.Map({
 const onLoad = async () => {
     map.addSource("hillshading", {
         "type": "raster-dem",
-        "url": `https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json`
+        "url": "https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json"
     });
 
     map.addLayer(
         {
-            'id': 'hillshading',
-            'source': 'hillshading',
-            'type': 'hillshade',
+            "id": "hillshading",
+            "source": "hillshading",
+            "type": "hillshade",
             paint: {
                 "hillshade-illumination-direction": 335,
                 "hillshade-exaggeration": 1,

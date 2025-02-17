@@ -10,7 +10,7 @@ const map = new maptilersdk.Map({
             historic: {
                 type: "raster",
                 tiles: [
-                    `https://api.maptiler.com/tiles/uk-osgb63k1885/{z}/{x}/{y}.png`,
+                    "https://api.maptiler.com/tiles/uk-osgb63k1885/{z}/{x}/{y}.png",
                 ], // 'Hills' edition, 1885-1903
             },
         },

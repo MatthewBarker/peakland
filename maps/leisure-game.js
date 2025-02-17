@@ -151,8 +151,8 @@ const ncaResponse = await fetch(
         style: { color: "green" },
         onEachFeature: function(feature, layer) {
             layer.bindPopup(feature.properties.NAME);
-            layer.on('mouseover', function() { layer.openPopup(); });
-            layer.on('mouseout', function() { layer.closePopup(); });
+            layer.on("mouseover", function() { layer.openPopup(); });
+            layer.on("mouseout", function() { layer.closePopup(); });
         }
     }),
     Areas: geojsonToMarkerLayer(areas, "orange"),

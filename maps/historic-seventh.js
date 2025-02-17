@@ -10,7 +10,7 @@ const map = new maptilersdk.Map({
             historic: {
                 type: "raster",
                 tiles: [
-                    `https://api.maptiler.com/tiles/uk-osgb63k1955/{z}/{x}/{y}.jpg`,
+                    "https://api.maptiler.com/tiles/uk-osgb63k1955/{z}/{x}/{y}.jpg",
                 ], // first one-inch to the mile to cover the whole of Great Britain
             },
         },
