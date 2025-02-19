@@ -9,27 +9,48 @@ const map = (window.map = new maptilersdk.Map({
 
 const timeTextDiv = document.getElementById("time-text");
 const pointerDataDiv = document.getElementById("pointer-data");
+const variableNameDiv = document.getElementById("variable-name");
 let pointerLngLat = null;
 
 const layers = [
-    new maptilerweather.PrecipitationLayer({
-        id: "precipitation",
-    }),
-    new maptilerweather.PressureLayer({
-        opacity: 0.8,
-        id: "pressure",
-    }),
-    new maptilerweather.RadarLayer({
-        opacity: 0.8,
-        id: "radar",
-    }),
-    new maptilerweather.TemperatureLayer({
-        colorramp: maptilerweather.ColorRamp.builtin.TEMPERATURE_3,
-        id: "temperature",
-    }),
-    new maptilerweather.WindLayer({ 
-        id: "wind" 
-    })
+    {
+        layer: new maptilerweather.PrecipitationLayer({
+            id: "precipitation",
+        }),
+        value: "value",
+        units: " mm",
+    },
+    {
+        layer: new maptilerweather.PressureLayer({
+            opacity: 0.8,
+            id: "pressure",
+        }),
+        value: "value",
+        units: " hPa",
+    },
+    {
+        layer: new maptilerweather.RadarLayer({
+            opacity: 0.8,
+            id: "radar",
+        }),
+        value: "value",
+        units: " dBZ",
+    },
+    {
+        layer: new maptilerweather.TemperatureLayer({
+            colorramp: maptilerweather.ColorRamp.builtin.TEMPERATURE_3,
+            id: "temperature",
+        }),
+        value: "value",
+        units: "°",
+    },
+    {
+        layer: new maptilerweather.WindLayer({
+            id: "wind",
+        }),
+        value: "speedMilesPerHour",
+        units: " mph",
+    },
 ];
 
 let active;
@@ -47,24 +68,25 @@ document.getElementById("buttons").addEventListener("click", function (event) {
 function changeLayer(id) {
     if (!active || active.id !== id) {
         for (const layer of layers) {
-            if (layer.id !== id) {
-                map.setLayoutProperty(layer.id, "visibility", "none");
-            }
-            else {
+            if (layer.layer.id !== id) {
+                map.setLayoutProperty(layer.layer.id, "visibility", "none");
+            } else {
                 map.setLayoutProperty(id, "visibility", "visible");
                 active = layer;
-            }            
+            }
         }
 
-        const buttons = document.getElementsByClassName('button');
-    
+        const buttons = document.getElementsByClassName("button");
+
         for (const button of buttons) {
-            if (button.id === active.id) {
-                button.classList.add('active');
-              } else {
-                button.classList.remove('active');
-              }
+            if (button.id === active.layer.id) {
+                button.classList.add("active");
+            } else {
+                button.classList.remove("active");
+            }
         }
+
+        updatePointerValue(pointerLngLat);
     }
 }
 
@@ -76,41 +98,37 @@ map.on("load", function () {
     map.setPaintProperty("Water", "fill-color", "rgba(0, 0, 0, 0.4)"); // need to be called Water, don't know why
 
     for (const layer of layers) {
-        map.addLayer(layer, "Water");
-        layer.animateByFactor(1);
+        map.addLayer(layer.layer, "Water");
+        layer.layer.animateByFactor(1);
     }
 
     changeLayer("wind");
 });
 
-// map.on("mouseout", function (evt) {
-//     if (!evt.originalEvent.relatedTarget) {
-//         pointerDataDiv.innerText = "";
-//         pointerLngLat = null;
-//     }
-// });
+function refreshTime() {
+    const d = layers[0].layer.getAnimationTimeDate();
 
-// // Update the date time display
-// function refreshTime() {
-//     const d = temperature.getAnimationTimeDate();
-//     timeTextDiv.innerText = d.toString();
-// }
+    timeTextDiv.innerText = d.toString();
+}
 
-// function updatePointerValue(lngLat) {
-//     if (!lngLat) return;
+function updatePointerValue(lngLat) {
+    if (!active || !lngLat) return;
 
-//     pointerLngLat = lngLat;
-//     const value = active.pickAt(lngLat.lng, lngLat.lat);
+    pointerLngLat = lngLat;
 
-//     if (!value) {
-//         pointerDataDiv.innerText = "";
+    const value = active.layer.pickAt(lngLat.lng, lngLat.lat);
 
-//         return;
-//     }
+    if (!value) {
+        pointerDataDiv.innerText = "";
+        variableNameDiv.innerText = "";
 
-//     pointerDataDiv.innerText = `${value.value.toFixed(1)}°`;
-// }
+        return;
+    }
 
-// map.on("mousemove", (e) => {
-//     updatePointerValue(e.lngLat);
-// });
+    pointerDataDiv.innerText = `${value[active.value].toFixed(1)}${active.units}`;
+    variableNameDiv.innerText = active.layer.id;
+}
+
+map.on("mousemove", (e) => {
+    updatePointerValue(e.lngLat);
+});
