@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Peakland - Weather</title>
+    <link rel="stylesheet" href="common.css" />
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v2.5.1/maptiler-sdk.css" rel="stylesheet" />
+    <style>
+        #buttons {
+            width: auto;
+            margin: 0 10px;
+            padding: 0;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            z-index: 99;
+            list-style: none;
+        }
+
+        #pointer-data {
+            z-index: 1;
+            position: fixed;
+            font-size: 20px;
+            font-weight: 900;
+            margin: 27px 0px 0px 10px;
+            color: #fff;
+            text-shadow: 0px 0px 10px #0007;
+        }
+
+        #variable-name {
+            z-index: 1;
+            position: fixed;
+            font-size: 20px;
+            font-weight: 500;
+            margin: 5px 0px 0px 10px;
+            color: #fff;
+            text-shadow: 0px 0px 10px #0007;
+        }
+
+        #time-info {
+            position: fixed;
+            width: 60vw;
+            bottom: 0;
+            z-index: 1;
+            text-shadow: 0px 0px 5px black;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+            left: 0;
+            right: 0;
+            margin: auto;
+            padding: 20px;
+        }
+
+        #time-text {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .active {
+            background-color: lightslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="time-info">
+        <span id="time-text"></span>
+    </div>
+    <div id="variable-name">Temperature</div>
+    <div id="pointer-data"></div>
+    <div id="map">
+        <ul id="buttons">
+            <li><button class="button" id="precipitation">Precipitation</button></li>
+            <li><button class="button" id="pressure">Pressure</button></li>
+            <li><button class="button" id="radar">Radar</button></li>
+            <li><button class="button" id="temperature">Temperature</button></li>
+            <li><button class="button" id="wind">Wind</button></li>
+        </ul>
+    </div>
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.5.1/maptiler-sdk.umd.min.js"></script>
+    <script src="https://cdn.maptiler.com/maptiler-weather/v2.2.0/maptiler-weather.umd.min.js"></script>
+    <script type="module" src="weather.js"></script>
+</body>
+
+</html>

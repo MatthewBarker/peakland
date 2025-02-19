@@ -17,9 +17,9 @@ const map = new maptilersdk.Map({
       images: {
         type: "raster",
         tiles: [
-          // "https://api.maptiler.com/maps/outdoor-v2/{z}/{x}/{y}@2x.png"
-          // "https://api.maptiler.com/maps/winter-v2/{z}/{x}/{y}@2x.png"
-          "https://api.maptiler.com/tiles/uk-osgb63k1955/{z}/{x}/{y}.jpg",
+          "https://api.maptiler.com/maps/outdoor-v2/{z}/{x}/{y}@2x.png",
+          // "https://api.maptiler.com/maps/winter-v2/{z}/{x}/{y}@2x.png",
+          // "https://api.maptiler.com/tiles/uk-osgb63k1955/{z}/{x}/{y}.jpg",
         ],
       },
     },
