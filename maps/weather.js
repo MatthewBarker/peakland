@@ -12,7 +12,7 @@ const pointerDataDiv = document.getElementById("pointer-data");
 const variableNameDiv = document.getElementById("variable-name");
 let pointerLngLat = null;
 
-const layers = [
+const visuals = [
     {
         layer: new maptilerweather.PrecipitationLayer({
             id: "precipitation",
@@ -62,17 +62,17 @@ let active;
 // });
 
 document.getElementById("buttons").addEventListener("click", function (event) {
-    changeLayer(event.target.id);
+    changeVisual(event.target.id);
 });
 
-function changeLayer(id) {
+function changeVisual(id) {
     if (!active || active.id !== id) {
-        for (const layer of layers) {
-            if (layer.layer.id !== id) {
-                map.setLayoutProperty(layer.layer.id, "visibility", "none");
+        for (const visual of visuals) {
+            if (visual.layer.id !== id) {
+                map.setLayoutProperty(visual.layer.id, "visibility", "none");
             } else {
                 map.setLayoutProperty(id, "visibility", "visible");
-                active = layer;
+                active = visual;
             }
         }
 
@@ -97,22 +97,24 @@ map.on("load", function () {
 
     map.setPaintProperty("Water", "fill-color", "rgba(0, 0, 0, 0.4)"); // need to be called Water, don't know why
 
-    for (const layer of layers) {
-        map.addLayer(layer.layer, "Water");
-        layer.layer.animateByFactor(1);
+    for (const visual of visuals) {
+        map.addLayer(visual.layer, "Water");
+        visual.layer.animateByFactor(1);
     }
 
-    changeLayer("wind");
+    changeVisual("wind");
 });
 
 function refreshTime() {
-    const d = layers[0].layer.getAnimationTimeDate();
+    const d = visuals[0].layer.getAnimationTimeDate();
 
     timeTextDiv.innerText = d.toString();
 }
 
 function updatePointerValue(lngLat) {
-    if (!active || !lngLat) return;
+    if (!active || !lngLat) {
+        return;
+    }
 
     pointerLngLat = lngLat;
 
