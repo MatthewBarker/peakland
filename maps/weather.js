@@ -26,7 +26,7 @@ const visuals = [
             id: "pressure",
         }),
         value: "value",
-        units: " hPa",
+        units: " mbar",
     },
     {
         layer: new maptilerweather.RadarLayer({
@@ -54,12 +54,6 @@ const visuals = [
 ];
 
 let active;
-
-// Called when the animation is progressing
-// active.on("tick", (event) => {
-//     refreshTime();
-//     updatePointerValue(pointerLngLat);
-// });
 
 document.getElementById("buttons").addEventListener("click", function (event) {
     changeVisual(event.target.id);
@@ -99,7 +93,6 @@ map.on("load", function () {
 
     for (const visual of visuals) {
         map.addLayer(visual.layer, "Water");
-        visual.layer.animateByFactor(1);
     }
 
     changeVisual("wind");
@@ -119,7 +112,7 @@ function updatePointerValue(lngLat) {
     pointerLngLat = lngLat;
 
     const value = active.layer.pickAt(lngLat.lng, lngLat.lat);
-
+    
     if (!value) {
         pointerDataDiv.innerText = "";
         variableNameDiv.innerText = "";
