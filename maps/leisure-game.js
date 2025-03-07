@@ -18,6 +18,7 @@ const crs = new L.Proj.CRS(
 );
 
 const map = L.map("map", { crs: crs, minZoom: 0, maxZoom: 9 });
+
 const bounds = new L.LatLngBounds([
     [53.033855, -2.107998],
     [53.597859, -1.515579],
@@ -51,6 +52,7 @@ function onEachFeature(feature, layer) {
 const ncaResponse = await fetch(
     "../gis/downloads/national-character-areas.geojson"
 );
+
 const nca = await ncaResponse.json();
 
 nca.features = nca.features.filter(
@@ -110,13 +112,13 @@ const height = measureY(bounds.getNorth(), centre.lat);
 const width = height * 420 / 297; // ratio of landscape page
 
 const upperBounds = [
-    [bounds.getNorth(), moveX(bounds.getNorth(), centre.lng, -width / 2)],
+    [bounds.getNorth(), moveX(centre.lat, centre.lng, -width / 2)],
     [centre.lat, moveX(centre.lat, centre.lng, width / 2)]
 ];
 
 const lowerBounds = [
     [centre.lat, moveX(centre.lat, centre.lng, -width / 2)],
-    [bounds.getSouth(), moveX(bounds.getSouth(), centre.lng, width / 2)]
+    [bounds.getSouth(), moveX(centre.lat, centre.lng, width / 2)]
 ];
 
 const upper = L.rectangle(upperBounds, { color: "red", fill: false });
@@ -207,17 +209,8 @@ L.control.layers(null, overlay).addTo(map);
 
 function geojsonToMarkerLayer(geojson, colour) {
     return L.geoJSON(geojson, {
-        onEachFeature: function (feature, layer) {
-            layer.bindPopup(feature.properties.name);
-            layer.on("mouseover", function () {
-                layer.openPopup();
-            });
-            layer.on("mouseout", function () {
-                layer.closePopup();
-            });
-        },
         pointToLayer: function (feature, latlng) {
-            return L.circleMarker(latlng, { radius: 10, color: colour });
+            return L.circleMarker(latlng, { radius: 10, color: colour }).bindTooltip(feature.properties.name, { permanent: true });
         },
     });
 }
