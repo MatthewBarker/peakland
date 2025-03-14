@@ -7,7 +7,7 @@ const map = new maptilersdk.Map({
     style: maptilersdk.MapStyle.WINTER,
 });
 
-const onLoad = async () => {
+map.on("load", async () => {
     map.addSource("hillshading", {
         type: "raster-dem",
         url: "https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json",
@@ -26,7 +26,7 @@ const onLoad = async () => {
         },
     });
 
-    const peakDistrict = await (
+    const peakDistrict = await(
         await fetch("../gis/downloads/peak-district.geojson")
     ).json();
 
@@ -45,6 +45,25 @@ const onLoad = async () => {
         },
     });
 
+    const ancientWoodland = await(
+        await fetch("../gis/downloads/ancient-woodland.geojson")
+    ).json();
+
+    map.addSource("ancientWoodland", {
+        type: "geojson",
+        data: ancientWoodland,
+    });
+
+    map.addLayer({
+        id: "ancientWoodland",
+        type: "line",
+        source: "ancientWoodland",
+        layout: {},
+        paint: {
+            "line-color": "green",
+        },
+    });
+
     // line coordinates taken from calculations in hillshade.js
     map.addSource("upper", {
         type: "geojson",
@@ -55,11 +74,11 @@ const onLoad = async () => {
                 type: "Polygon",
                 coordinates: [
                     [
-                        [-2.1455586312328414, 53.315857,],
-                        [-2.1455586312328414, 53.597859,],
-                        [-1.4780183687671589, 53.597859,],
-                        [-1.4780183687671589, 53.315857,],
-                        [-2.1455586312328414, 53.315857,],
+                        [-2.1455586312328414, 53.315857],
+                        [-2.1455586312328414, 53.597859],
+                        [-1.4780183687671589, 53.597859],
+                        [-1.4780183687671589, 53.315857],
+                        [-2.1455586312328414, 53.315857],
                     ],
                 ],
             },
@@ -136,6 +155,13 @@ const onLoad = async () => {
     map.fitBounds([-2.107998, 53.033855, -1.515579, 53.597859], {
         padding: 20,
     });
-};
+});
 
-map.on("load", onLoad);
+map.on("ready", async () => {
+    document.getElementById("screenshot").addEventListener("click", function () {
+        maptilersdk.helpers.takeScreenshot(map, {
+            download: true,
+            filename: "maptiler_map_screenshot.png",
+        });
+    });
+});

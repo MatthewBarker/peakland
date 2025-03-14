@@ -8,10 +8,36 @@
     <title>Peakland - Hillshade - Peak district</title>
     <link rel="stylesheet" href="common.css" />
     <link href="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.css" rel="stylesheet" />
+
+    <style>
+        #map {
+            height: 3508px;
+            width: 2480px;
+        }
+
+        #screenshot {
+            display: block;
+            position: relative;
+            margin: 0px auto;
+            width: 50%;
+            height: 40px;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            font-size: 12px;
+            text-align: center;
+            color:
+                #fff;
+            background:
+                #ee8a65;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
     <div id="map"></div>
+    <button id="screenshot">Download screenshot</button>
     <script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.umd.min.js"></script>
     <script type="module" src="hillshade-peak.js"></script>
 </body>
