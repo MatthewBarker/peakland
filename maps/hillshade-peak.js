@@ -42,6 +42,7 @@ map.on("load", async () => {
         layout: {},
         paint: {
             "line-color": "red",
+            "line-width": 3,
         },
     });
 
@@ -61,6 +62,7 @@ map.on("load", async () => {
         layout: {},
         paint: {
             "line-color": "green",
+            "line-width": 3,
         },
     });
 
@@ -92,6 +94,7 @@ map.on("load", async () => {
         layout: {},
         paint: {
             "line-color": "red",
+            "line-width": 3,
         },
     });
 
@@ -122,6 +125,7 @@ map.on("load", async () => {
         layout: {},
         paint: {
             "line-color": "red",
+            "line-width": 3,
         },
     });
 
@@ -149,6 +153,7 @@ map.on("load", async () => {
         layout: {},
         paint: {
             "line-color": "red",
+            "line-width": 3,
         },
     });
 
